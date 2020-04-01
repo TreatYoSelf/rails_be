@@ -102,4 +102,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  # Rack-CORS allowed origin in this environment
+  #config.allowed_cors_origins = ["https://landslide-57f9a.firebaseapp.com"]
 end
