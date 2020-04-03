@@ -285,7 +285,6 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   skylight
-  sprockets
   travis
   tzinfo-data
   vcr

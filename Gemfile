@@ -31,7 +31,6 @@ gem 'figaro'
 gem 'graphql'
 gem 'search_object_graphql'
 gem 'skylight'
-gem 'sprockets'
 gem 'travis'
 
 group :development, :test do
