@@ -1,13 +1,13 @@
 module Types
   class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+    field :get_user_google_token, Types::UserType, null: false, description: "returns user by google token" do
+      argument :google_token, String, required: true
+    end
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    # resolvers below/controller actions
+    def get_user_google_token(id:)
+      binding.pry
+      User.find_by(google_token: id)
     end
   end
 end
