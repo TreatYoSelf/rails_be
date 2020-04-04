@@ -1,4 +1,4 @@
 class CategoryActivity < ApplicationRecord
-  belongs_to :categories
-  belongs_to :activities
+  belongs_to :category
+  belongs_to :activity
 end
