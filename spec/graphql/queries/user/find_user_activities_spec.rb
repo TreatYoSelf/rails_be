@@ -14,12 +14,12 @@ RSpec.describe Types::QueryType do
       user.category_activities << x
 
 			result = TreatYoSelfSchema.execute(query).as_json
-      expect(result["data"]["findUserActivities"]["activities"]).to eq(["Hike", "Swimming"])
+      expect(result["data"]["getUserActivities"]["activities"]).to eq(["Hike", "Swimming"])
 		end
 		def query
 			<<~GQL
 			{
-				findUserActivities(id: "111")
+				getUserActivities(id: "111")
 				{
 					activities
 				}
