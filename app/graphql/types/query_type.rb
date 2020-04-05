@@ -6,6 +6,10 @@ module Types
 
     field :get_categories, [Types::CategoryType], null: false, description: "returns all categories"
 
+    field :find_user_activities, Types::UserType, null: false, description: "returns user activities" do
+      argument :id, ID, required: true
+    end
+
     # resolvers below/controller actions
     def get_user_google_token(id:)
       User.find_by(google_token: id)
@@ -13,6 +17,10 @@ module Types
 
     def get_categories
       Category.all
+    end
+
+    def find_user_activities(id:)
+      User.find(id)
     end
   end
 end
