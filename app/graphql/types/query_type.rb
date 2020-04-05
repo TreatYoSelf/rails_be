@@ -6,7 +6,7 @@ module Types
 
     field :get_categories, [Types::CategoryType], null: false, description: "returns all categories"
 
-    field :find_user_activities, Types::UserType, null: false, description: "returns user activities" do
+    field :get_user_activities, Types::UserType, null: false, description: "returns user activities" do
       argument :id, ID, required: true
     end
 
@@ -19,7 +19,7 @@ module Types
       Category.all
     end
 
-    def find_user_activities(id:)
+    def get_user_activities(id:)
       User.find(id)
     end
   end
