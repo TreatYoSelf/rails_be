@@ -4,4 +4,5 @@ validates :email, uniqueness: true
 
 has_many :user_activities, dependent: :destroy
 has_many :category_activities, through: :user_activities
+has_many :activities, through: :category_activities
 end
