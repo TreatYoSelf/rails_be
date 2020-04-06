@@ -1,0 +1,15 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.6.3
+services:
+- postgresql
+before_install:
+- gem install bundler
+before_script:
+- psql -c 'create database treat_yo_self_be_test;' -U postgres
+# following adapted from https://blog.travis-ci.com/2019-05-30-setting-up-a-ci-cd-process-on-github
+      deploy:
+        provider: heroku
+        api_key:
+          secure:
