@@ -7,6 +7,7 @@ module Types
     field :get_categories, [Types::CategoryType], null: false, description: "returns all categories"
 
     # resolvers below/controller actions
+    
     def get_user_google_token(id:)
       User.find_by(google_token: id)
     end
