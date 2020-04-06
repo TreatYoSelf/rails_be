@@ -11,6 +11,7 @@ module Types
     end
 
     # resolvers below/controller actions
+    
     def get_user_google_token(id:)
       User.find_by(google_token: id)
     end
