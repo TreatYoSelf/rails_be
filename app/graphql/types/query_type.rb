@@ -10,7 +10,7 @@ module Types
       argument :id, ID, required: true
     end
 
-    field :get_activities, [Types::ActivityType], null: false, description: "resturns all categories"
+    field :get_activities, [Types::ActivityType], null: false, description: "returns all categories"
 
     # resolvers below/controller actions
     
