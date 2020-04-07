@@ -1,0 +1,13 @@
+Title,Time Requirement,Cost?,Type
+Outdoor Walk,60,FALSE,Outdoor
+Hiking,90,FALSE,Outdoor
+Bubble Bath,30,FALSE,Beauty
+Face Mask,30,TRUE,Beauty
+Manicure,60,TRUE,Beauty
+Indoor Yoga,60,FALSE,Exercise
+Clean Out Sock Drawer,30,FALSE,Home
+Arrange Book Shelf,30,FALSE,Organizing
+Make A Special Meal,60,TRUE,Food
+5 Minute Breathing Exercise,30,FALSE,Mindfulness
+Yoga In The Park,60,FALSE,Group
+One Hour Of Reading,60,FALSE,Enrichment
