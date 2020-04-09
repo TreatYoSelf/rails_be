@@ -28,6 +28,7 @@ gem 'rack-cors'
 
 gem 'faraday'
 gem 'figaro'
+gem 'fast_jsonapi'
 gem 'graphql'
 gem 'search_object_graphql'
 gem 'skylight'
