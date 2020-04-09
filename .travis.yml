@@ -6,4 +6,4 @@ services:
 before_install:
 - gem install bundler
 before_script:
-- psql -c 'create database treat_yo_self_be_test;' -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
