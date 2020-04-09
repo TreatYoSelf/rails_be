@@ -5,6 +5,6 @@ class Api::V1::SuggestionsController < ApplicationController
 
 	private
 	def suggestions
-		SuggestionFacade.new(params)
+		SuggestionFacade.new(params).choose_activities
 	end
 end 
