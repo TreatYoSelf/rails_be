@@ -28,5 +28,4 @@
 /config/application.yml
 
 # Ignore travis file
-.travis.yml
 dump.rdb
