@@ -30,8 +30,10 @@ RSpec.describe Types::QueryType do
 			joins1 = CategoryActivity.create(category_id: category.id, activity_id: activity_1.id)
 			joins2 = CategoryActivity.create(category_id: category.id, activity_id: activity_2.id)
 			joins3 = CategoryActivity.create(category_id: category.id, activity_id: activity_3.id)
+
 			result = TreatYoSelfSchema.execute(query).as_json
 			expect(result["data"]["getDelights"].count).to eq(5)
+			expect(result["data"]["getDelights"].count).not_to eq(6)
     end
     def query
       <<~GQL
