@@ -1,7 +1,6 @@
 class Api::V1::SuggestionsController < ApplicationController
 	def create
-		#render json: SuggestionSerializer.new(suggestions)
-		suggestions
+		render json: { scheduled_treat: suggestions }
 	end
 
 	private
