@@ -1,10 +1,12 @@
-class Api::V1::SuggestionsController < ApplicationController 
+class Api::V1::SuggestionsController < ApplicationController
 	def create
-		render json: SuggestionSerializer.new(suggestions)
+		#render json: SuggestionSerializer.new(suggestions)
+		suggestions
 	end
 
 	private
 	def suggestions
-		SuggestionFacade.new(params).choose_activities
+		current_user = User.first
+		SuggestionFacade.new(current_user).schedule_activities
 	end
-end 
+end
