@@ -36,9 +36,14 @@ module TreatYoSelf
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    config.api_only = false
 
     # For GraphiQL, in conjunction with above requirement of sprockets/railtie
     config.middleware.use Rack::MethodOverride
+    # config.middleware.use ActionDispatch::Flash
+    # config.session_store :cookie_store, key: '_interslice_session' # <-- this also configures session_options for use below
+    # config.middleware.use ActionDispatch::Cookies # Required for all session management (regardless of session_store)
+    # config.middleware.use config.session_store 
+    # config.session_options
   end
 end
