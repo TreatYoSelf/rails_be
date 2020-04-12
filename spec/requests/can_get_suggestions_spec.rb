@@ -11,16 +11,14 @@ RSpec.describe "'/suggestions' endpoint", :vcr do
 
 	categoryactivities = CategoryActivity.all
 	user.category_activities << categoryactivities
-	#allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+	
 		user_params = {
 			category: ["outdoors", "mindfulness", "music"]
 		}
 		post "/api/v1/suggestions", params: user_params
 
 		expect(response).to be_successful
-
 		data = JSON.parse(response.body, symbolize_names: true)
-
 		expect(data).to_not be_empty
 	end
 end
