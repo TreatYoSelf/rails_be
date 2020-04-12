@@ -1,4 +1,6 @@
 class SuggestionSerializer
 	include FastJsonapi::ObjectSerializer
-	attributes :id, :suggestions
+
+	attributes :id, :description
+
 end
