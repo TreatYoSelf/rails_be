@@ -1,11 +1,10 @@
-class SuggestionFacade 
-	def initialize(params)
-		user = params["user_id"]
-		est_time = params["est_time"]
-		category = params["category"]
+class SuggestionFacade
+	def initialize(current_user)
+		@current_user = current_user
 	end
 
-	def choose_activities
-		Suggestion.new(params)
+	def schedule_activities
+		scheduler = SchedulerService.new(@current_user)
+		scheduler.schedule_suggestions
 	end
 end
