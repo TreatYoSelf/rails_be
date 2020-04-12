@@ -13,13 +13,15 @@ class SchedulerService
     @hour_scheduled_times = [("08:01".."08:59"), ("09:01".."09:59"),("10:01".."10:59"),("11:01".."11:59"),("12:01".."12:59"),( "13:01".."13:59"),( "14:01".."14:59"), ("15:01".."15:59"), ("16:01".."16:59"), ("17:01".."17.59"), ("18:01".."18:59"),( "19:01".."19:59"), ("20:01".."20:59")]
   end
 
+  # sets up initial Google Calendar Service with current user's google token
   def get_calendar_service
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
-    service.authorization = @current_user.google_token
+    service.authorization = 'ya29.a0Ae4lvC1ZKMasrY-f4BtaWOQD3mza0ayfurF7Lddydk1NDPNt72YcQ16NdIipOcdErvWt0WDiAlb1OL3N20HM2O_vbWxjgu_DXePNgKWKycfPbxyXV0ENyQy8AlHrem9AEfwyO4ukQI3CG2jYx-oLObAOhzvDBmmD22io'#@current_user.google_token
     service
   end
 
+  # Uses Google Service to find a list of user events within current week time period
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
@@ -29,36 +31,49 @@ class SchedulerService
                                    order_by: "startTime" )
   end
 
+  # Sets available times from 8 a.m. - 8 p.m. as a string and puts that
+  # in an array by the minute i.e. ["08:00", "08:01", "08:02"]
   def available_time
     available_times = ("08:00".."20:00").to_a
     available_times.delete_if do |time|
+    # since this is a string this deletes any minute over 00:59 ex. (09:60 would be deleted)
+    # this returns an array with more realistic time frames
      time.split("")[3].to_i > 5
     end
   end
 
+  # Uses the array of events to subract event time frames from a user's availability.
   def availability
     find_user_events.items.reduce({}) do |acc, event|
+      # Sets start and end time frames from a single event
       start_time = event.original_start_time
       start_time = event.start if event.original_start_time.nil?
       end_time = event.end.date_time
 
-      if !acc[start_time.date_time.strftime("%A")]
-        available_times = available_time
-      else
-        available_times = acc[start_time.date_time.strftime("%A")]
-      end
-
+      weekday = start_time.date_time.strftime("%A")
+      # Takes start and end times and converts them to a stringtime and sets an event range.
       event = start_time.date_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
-
+      # Similar to available_time this deletes any mintues over :59.
       event_range.delete_if do |time|
         time.split("")[3].to_i > 5
       end
-      acc[start_time.date_time.strftime("%A")] = [available_times - event_range].flatten
+      # The key of the acc is the day of the week i.e. "Wednesday"
+      if !acc[weekday]
+      # If this key has not been assigned then sets the availability to full availability
+        available_times = available_time
+      else
+      # If this key has been assigned it sets available times to the existing value
+        available_times = acc[weekday]
+      end
+      # Sets key to weekday and the value to available time minus the event time.
+      acc[weekday] = [available_times - event_range].flatten
       acc
     end
   end
 
+  # If there was not an event scheduled then that day will not be in the availability hash
+  # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
     weekdays.each do |day|
       availability[day] = available_time if !availability[day]
@@ -66,6 +81,8 @@ class SchedulerService
     availability
   end
 
+  # Grabs a random activity, time frame and date, checks if it is in open availability
+  # and if it is returns those three items in an array.
   def create_random_date_and_activity
     open_slot = false
     activity = current_user.activities.sample(1).first
@@ -78,6 +95,7 @@ class SchedulerService
     end
   end
 
+  # Takes the random date and activity array and formats them for the google api.
   def event_details(create_random_date_and_activity)
     details = create_random_date_and_activity
     start_time = details[0].to_f
@@ -88,6 +106,7 @@ class SchedulerService
     @activity = details[2]
   end
 
+  # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)
 
@@ -116,7 +135,7 @@ class SchedulerService
 
           Google::Apis::CalendarV3::EventReminder.new(
             reminder_method: 'popup',
-            minutes: 60
+            minutes: 24 * 60
           ),
 
           Google::Apis::CalendarV3::EventReminder.new(
@@ -128,6 +147,7 @@ class SchedulerService
     )
   end
 
+  # Takes the new event details and inserts that event into the current user's calendar.
   def schedule_suggestions
     result = get_calendar_service.insert_event("primary", event)
   end
