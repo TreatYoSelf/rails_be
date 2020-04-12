@@ -8,7 +8,7 @@ class Api::V1::GooglesController < ApplicationController
   # Initialize the API
     service = Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
-    service.authorization = "ya29.a0Ae4lvC0H0GEBEE1IQYfPoqacV0RJMn_toLBIBz4DCL2kOK7_0lDbcshAzTdfLXRlJMwilm5Dzqa8la0CCyK82qBe8XBA9_I3j68N6XCSIPVXmthhwbHTZnMe6W-5G0lI9TCRqpLC94rPuPZyRK1ivBlij-EEgnVhbK3p"
+    service.authorization = "ya29.a0Ae4lvC2-i0XdIUOBqJvYZcewpCaKgLD8oBdqyps88767EA4Li18BG-UslQas_jErcAzvtNXapJu-tM8iR1f2_tJZSpI-6m6GTBTvJUud0OL-2DJFNC3R2eY48-K7gb2Vck7sWF51CFt2Le0erL6kXtsqtyTW5twxHu4"
     # Fetch the next 10 events for the user
     calendar_id = "primary"
     @response = service.list_events(calendar_id,
@@ -79,37 +79,42 @@ end
 x = find_open_time_slot
 start_time = x[0].to_f
 day = x[1].to_datetime
-date = day + start_time.hour
-require "pry"; binding.pry
+date = (day + start_time.hour)
+end_date = (date + 1.hour).rfc3339
+start_date = date.rfc3339
+activity = Activity.first.name
 
-#
-    event = Google::Apis::CalendarV3::Event.new(
-      summary: 'Google I/O 2015',
-      location: 'activity',
-      description: 'Treat Yo Self',
-      start: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: date.rfc3339,
-        time_zone: 'America/Denver'
+event = Google::Apis::CalendarV3::Event.new(
+  summary: activity,
+  description: 'Treat Yo Self',
+  start: Google::Apis::CalendarV3::EventDateTime.new(
+    date_time: start_date,
+    time_zone: 'America/Denver'
+  ),
+  end: Google::Apis::CalendarV3::EventDateTime.new(
+    date_time: end_date,
+    time_zone: 'America/Denver'
+  ),
+  reminders: Google::Apis::CalendarV3::Event::Reminders.new(
+    use_default: false,
+    overrides: [
+      Google::Apis::CalendarV3::EventReminder.new(
+        reminder_method: 'email',
+        minutes: 24 * 60
       ),
-      end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: date.rfc3339,
-        time_zone: 'America/Denver'
-      ),
-      reminders: Google::Apis::CalendarV3::Event::Reminders.new(
-        use_default: false,
-        overrides: [
-          Google::Apis::CalendarV3::EventReminder.new(
-            reminder_method: 'email',
-            minutes: 24 * 60
-          ),
-          Google::Apis::CalendarV3::EventReminder.new(
-            reminder_method: 'popup',
-            minutes: 60
-          )
-        ]
+      Google::Apis::CalendarV3::EventReminder.new(
+        reminder_method: 'popup',
+        minutes: 60
       )
-    )
-  require "pry"; binding.pry
+      Google::Apis::CalendarV3::EventReminder.new(
+        reminder_method: 'popup',
+        minutes: 60
+      )
+    ]
+  )
+)
+
+
   result = service.insert_event("primary", event)
   end
 end
