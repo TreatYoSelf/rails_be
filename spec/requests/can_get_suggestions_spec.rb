@@ -13,9 +13,6 @@ RSpec.describe "'/suggestions' endpoint", :vcr do
 	activity_4 = Activity.create(name: "Shovel Snow", est_time: "01:15")
 	category.activities << [activity, activity_1]
 	category2.activities << [activity_2, activity_3]
-	#
-	# categoryactivities = CategoryActivity.all
-	# user.category_activities << categoryactivities
 
 		user_params = {
 			category: ["Outdoors", "Mindfulness"]
