@@ -16,7 +16,7 @@ class SchedulerService
   def get_calendar_service
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
-    service.authorization = 'ya29.a0Ae4lvC0wiRoBsPoJOAF14smN7I1N0CJggSA7AriZKeWXlkTJ35cFE-2M3wWcLJBtgSPqx5LEwPQvDmaMIvZtPttThXV2rBdZOQ1aeVAnyVAj-8higHhspKH5Dj8Ed1lVsOKaIUFAHUmDkLGaPejH3e0r1DPDRWhLG1g'#@current_user.google_token
+    service.authorization = @current_user.google_token
     service
   end
 
