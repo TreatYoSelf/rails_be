@@ -85,7 +85,7 @@ class SchedulerService
   # and if it is returns those three items in an array.
   def create_random_date_and_activity
     open_slot = false
-    activity = current_user.activities.sample(1).first
+    activity = @current_user.activities.sample(1).first
     until open_slot
       day = weekdays.sample(1)[0]
       time = hour_scheduled_times.sample(1)[0]
