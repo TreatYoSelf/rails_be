@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "'/suggestions' endpoint", :vcr do
+RSpec.describe "'/suggestions' endpoint" do
 	it 'can get suggestions based on incoming params for a user' do
 	token = ENV["GOOGLE_TOKEN"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
-
-	allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
 	category = Category.create(name: "Outdoors")
 	category2 = Category.create(name: "Mindfulness")
 
@@ -18,6 +15,9 @@ RSpec.describe "'/suggestions' endpoint", :vcr do
 	category.activities << [activity, activity_1]
 	category2.activities << [activity_2, activity_3]
 
+	allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+	VCR.use_cassette("spec/cassettes/_/suggestions_endpoint/can_get_suggestions_based_on_incoming_params_for_a_user.yml") do
 		user_params = {
 			category: ["Outdoors", "Mindfulness"]
 		}
@@ -28,5 +28,9 @@ RSpec.describe "'/suggestions' endpoint", :vcr do
 		expect(user.activities).not_to include(activity_4)
 		data = JSON.parse(response.body, symbolize_names: true)
 		expect(data[:scheduled_treat][:description]).to eq("Treat Yo Self")
+
+	 end
+
+
 	end
 end
