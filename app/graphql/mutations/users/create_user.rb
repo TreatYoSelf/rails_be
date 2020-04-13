@@ -9,10 +9,7 @@ module Mutations
       type Types::UserType
 
       def resolve(attributes)
-        user = User.create(attributes)
-        require 'pry';binding.pry
-        session[:user_id] = user.id
-        user
+        User.create(attributes)
       end
     end
   end
