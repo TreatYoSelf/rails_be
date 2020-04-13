@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 13 Apr 2020 21:51:06 GMT
+      - Mon, 13 Apr 2020 22:05:33 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -27,9 +27,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 13 Apr 2020 21:51:06 GMT
+      - Mon, 13 Apr 2020 22:05:33 GMT
       Date:
-      - Mon, 13 Apr 2020 21:51:06 GMT
+      - Mon, 13 Apr 2020 22:05:33 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -60,9 +60,9 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"p33gdducnkfjeg0g\"",
+         "etag": "\"p32099i54m7jeg0g\"",
          "summary": "rerobran@gmail.com",
-         "updated": "2020-04-13T20:48:02.780Z",
+         "updated": "2020-04-13T21:51:07.328Z",
          "timeZone": "America/Denver",
          "accessRole": "owner",
          "defaultReminders": [
@@ -74,14 +74,14 @@ http_interactions:
          "items": []
         }
     http_version: null
-  recorded_at: Mon, 13 Apr 2020 21:51:06 GMT
+  recorded_at: Mon, 13 Apr 2020 22:05:33 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
     body:
       encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-18T17:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-18T16:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
-        Yo Self to: Swimming"}'
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-17T20:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-17T19:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Meditate"}'
     headers:
       User-Agent:
       - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.14.6 (gzip)
@@ -90,7 +90,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 13 Apr 2020 21:51:07 GMT
+      - Mon, 13 Apr 2020 22:05:33 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Content-Type:
@@ -109,9 +109,9 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Mon, 13 Apr 2020 21:51:07 GMT
+      - Mon, 13 Apr 2020 22:05:33 GMT
       Etag:
-      - '"3173629334496000"'
+      - '"3173631067189000"'
       Vary:
       - Origin
       - X-Origin
@@ -140,13 +140,13 @@ http_interactions:
       string: |
         {
          "kind": "calendar#event",
-         "etag": "\"3173629334496000\"",
-         "id": "2fa665q1hemu9fo1a3gs9mc93g",
+         "etag": "\"3173631067189000\"",
+         "id": "kj3958vrvgqd1phjv505ijhpl8",
          "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=MmZhNjY1cTFoZW11OWZvMWEzZ3M5bWM5M2cgcmVyb2JyYW5AbQ",
-         "created": "2020-04-13T21:51:07.000Z",
-         "updated": "2020-04-13T21:51:07.328Z",
-         "summary": "Treat Yo Self to: Swimming",
+         "htmlLink": "https://www.google.com/calendar/event?eid=a2ozOTU4dnJ2Z3FkMXBoanY1MDVpamhwbDggcmVyb2JyYW5AbQ",
+         "created": "2020-04-13T22:05:33.000Z",
+         "updated": "2020-04-13T22:05:33.640Z",
+         "summary": "Treat Yo Self to: Meditate",
          "description": "Treat Yo Self",
          "creator": {
           "email": "rerobran@gmail.com",
@@ -157,14 +157,14 @@ http_interactions:
           "self": true
          },
          "start": {
-          "dateTime": "2020-04-18T10:00:00-06:00",
+          "dateTime": "2020-04-17T13:00:00-06:00",
           "timeZone": "America/Denver"
          },
          "end": {
-          "dateTime": "2020-04-18T11:00:00-06:00",
+          "dateTime": "2020-04-17T14:00:00-06:00",
           "timeZone": "America/Denver"
          },
-         "iCalUID": "2fa665q1hemu9fo1a3gs9mc93g@google.com",
+         "iCalUID": "kj3958vrvgqd1phjv505ijhpl8@google.com",
          "sequence": 0,
          "reminders": {
           "useDefault": false,
@@ -185,5 +185,5 @@ http_interactions:
          }
         }
     http_version: null
-  recorded_at: Mon, 13 Apr 2020 21:51:07 GMT
+  recorded_at: Mon, 13 Apr 2020 22:05:33 GMT
 recorded_with: VCR 5.1.0
