@@ -10,32 +10,30 @@ describe 'create user and session' do
              }
 
 		post '/api/v1/users', params: params
+
+		post '/graphql', params: { query: query }
+
 		expect(response).to be_successful
-		data = JSON.parse(response.body, symbolize_names: true)
-		require 'pry'; binding.pry
-		expect(data[:first_name])
+		JSON.parse(response.body, symbolize_names: true)
+	end
+
+	def query
+			<<~GQL
+				mutation {
+					user: createUser(
+						input: {
+										firstName: "Becky"
+										lastName: "Smith"
+										email: "rer@gmail.com"
+										googleToken: "34ete3t"
+											}  )
+				{
+					id
+					firstName
+					lastName
+					email
+					}
+				}
+			GQL
 	end
 end
-
-		# get '/hello'
-		# post '/graphql', params: { query: query }
-
-# def query
-# 		<<~GQL
-# 			mutation {
-# 				user: createUser(
-# 					input: {
-# 									firstName: "Becky"
-# 									lastName: "Smith"
-# 									email: "rer@gmail.com"
-# 									googleToken: "34ete3t"
-# 										}  )
-# 			{
-# 				id
-# 				firstName
-# 				lastName
-# 				email
-# 				}
-# 			}
-# 		GQL
-# 	end
