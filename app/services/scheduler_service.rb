@@ -86,7 +86,11 @@ class SchedulerService
   def create_random_date_and_activity
     open_slot = false
     activity = current_user.activities.sample(1).first
-    activity = activity.name || "Yoga"
+    if activity.nil?
+      activity = "Yoga"
+    else 
+      activity = activity.name
+    end
     until open_slot
       day = weekdays.sample(1)[0]
       time = hour_scheduled_times.sample(1)[0]
