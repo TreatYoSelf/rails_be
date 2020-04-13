@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 13 Apr 2020 19:54:19 GMT
+      - Mon, 13 Apr 2020 20:11:45 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -27,9 +27,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 13 Apr 2020 19:54:19 GMT
+      - Mon, 13 Apr 2020 20:11:46 GMT
       Date:
-      - Mon, 13 Apr 2020 19:54:19 GMT
+      - Mon, 13 Apr 2020 20:11:46 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -60,9 +60,9 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"p320cl1emhbjeg0g\"",
+         "etag": "\"p32gahecnivjeg0g\"",
          "summary": "rerobran@gmail.com",
-         "updated": "2020-04-13T18:58:22.112Z",
+         "updated": "2020-04-13T19:54:20.500Z",
          "timeZone": "America/Denver",
          "accessRole": "owner",
          "defaultReminders": [
@@ -119,12 +119,12 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 10
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 10
              }
             ]
            }
@@ -159,16 +159,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -226,12 +226,12 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 10
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 10
              }
             ]
            }
@@ -268,16 +268,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -314,12 +314,12 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -356,16 +356,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -402,16 +402,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -448,16 +448,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -494,16 +494,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -540,16 +540,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -586,16 +586,62 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
+              "method": "email",
+              "minutes": 1440
              },
              {
               "method": "popup",
               "minutes": 1440
              },
+             {
+              "method": "popup",
+              "minutes": 60
+             }
+            ]
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3173615320846000\"",
+           "id": "dbv2d6pn291v5jltlulm520l58",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZGJ2MmQ2cG4yOTF2NWpsdGx1bG01MjBsNTggcmVyb2JyYW5AbQ",
+           "created": "2020-04-13T19:54:20.000Z",
+           "updated": "2020-04-13T19:54:20.500Z",
+           "summary": "Treat Yo Self to: Hike",
+           "description": "Treat Yo Self",
+           "creator": {
+            "email": "rerobran@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "rerobran@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-17T06:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-17T07:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "dbv2d6pn291v5jltlulm520l58@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false,
+            "overrides": [
              {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -632,16 +678,16 @@ http_interactions:
             "useDefault": false,
             "overrides": [
              {
-              "method": "popup",
-              "minutes": 60
-             },
-             {
-              "method": "popup",
-              "minutes": 1440
-             },
-             {
               "method": "email",
               "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             },
+             {
+              "method": "popup",
+              "minutes": 60
              }
             ]
            }
@@ -649,14 +695,14 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Mon, 13 Apr 2020 19:54:20 GMT
+  recorded_at: Mon, 13 Apr 2020 20:11:46 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
     body:
       encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-17T13:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-17T12:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
-        Yo Self to: Hike"}'
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-17T10:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-17T09:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Meditate"}'
     headers:
       User-Agent:
       - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.14.6 (gzip)
@@ -665,7 +711,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 13 Apr 2020 19:54:20 GMT
+      - Mon, 13 Apr 2020 20:11:46 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Content-Type:
@@ -684,9 +730,9 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Mon, 13 Apr 2020 19:54:20 GMT
+      - Mon, 13 Apr 2020 20:11:47 GMT
       Etag:
-      - '"3173615320846000"'
+      - '"3173617413788000"'
       Vary:
       - Origin
       - X-Origin
@@ -715,13 +761,13 @@ http_interactions:
       string: |
         {
          "kind": "calendar#event",
-         "etag": "\"3173615320846000\"",
-         "id": "dbv2d6pn291v5jltlulm520l58",
+         "etag": "\"3173617413788000\"",
+         "id": "fk7ef8f4o2l4tpmenv3ev85vd4",
          "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=ZGJ2MmQ2cG4yOTF2NWpsdGx1bG01MjBsNTggcmVyb2JyYW5AbQ",
-         "created": "2020-04-13T19:54:20.000Z",
-         "updated": "2020-04-13T19:54:20.500Z",
-         "summary": "Treat Yo Self to: Hike",
+         "htmlLink": "https://www.google.com/calendar/event?eid=Zms3ZWY4ZjRvMmw0dHBtZW52M2V2ODV2ZDQgcmVyb2JyYW5AbQ",
+         "created": "2020-04-13T20:11:46.000Z",
+         "updated": "2020-04-13T20:11:46.954Z",
+         "summary": "Treat Yo Self to: Meditate",
          "description": "Treat Yo Self",
          "creator": {
           "email": "rerobran@gmail.com",
@@ -732,18 +778,22 @@ http_interactions:
           "self": true
          },
          "start": {
-          "dateTime": "2020-04-17T06:00:00-06:00",
+          "dateTime": "2020-04-17T03:00:00-06:00",
           "timeZone": "America/Denver"
          },
          "end": {
-          "dateTime": "2020-04-17T07:00:00-06:00",
+          "dateTime": "2020-04-17T04:00:00-06:00",
           "timeZone": "America/Denver"
          },
-         "iCalUID": "dbv2d6pn291v5jltlulm520l58@google.com",
+         "iCalUID": "fk7ef8f4o2l4tpmenv3ev85vd4@google.com",
          "sequence": 0,
          "reminders": {
           "useDefault": false,
           "overrides": [
+           {
+            "method": "popup",
+            "minutes": 1440
+           },
            {
             "method": "email",
             "minutes": 1440
@@ -751,14 +801,10 @@ http_interactions:
            {
             "method": "popup",
             "minutes": 60
-           },
-           {
-            "method": "popup",
-            "minutes": 1440
            }
           ]
          }
         }
     http_version: null
-  recorded_at: Mon, 13 Apr 2020 19:54:20 GMT
+  recorded_at: Mon, 13 Apr 2020 20:11:47 GMT
 recorded_with: VCR 5.1.0
