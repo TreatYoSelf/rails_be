@@ -26,6 +26,7 @@ RSpec.describe "'/suggestions' endpoint" do
 		user_params = {
 			category: ["Outdoors", "Mindfulness"]
 		}
+
 		post "/api/v1/suggestions", params: user_params
 
 		expect(response).to be_successful
