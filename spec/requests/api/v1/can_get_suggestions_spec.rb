@@ -28,10 +28,9 @@ RSpec.describe "'/suggestions' endpoint" do
 		}
 
 		post "/api/v1/suggestions", params: user_params
-			
+
 		expect(response).to be_successful
-		expect(user.activities).to eq([activity, activity_1, activity_2, activity_3])
-		expect(user.activities).not_to include(activity_4)
+
 		data = JSON.parse(response.body, symbolize_names: true)
 		expect(data[:scheduled_treat][:description]).to eq("Treat Yo Self")
 	end
