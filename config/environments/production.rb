@@ -104,5 +104,5 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   # Rack-CORS allowed origin in this environment
 
-  config.allowed_cors_origins = ['localhost:3000']
+  config.allowed_cors_origins = ['localhost:19002']
 end

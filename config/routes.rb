@@ -5,16 +5,12 @@ Rails.application.routes.draw do
 
   post "/graphql", to: "graphql#execute"
 
-  namespace :api do
-    namespace :v1 do
-      get '/google_calender', to: 'googles#index'
-    end
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  namespace :api do 
-    namespace :v1 do 
+  namespace :api do
+    namespace :v1 do
       post '/suggestions', to: 'suggestions#create'
+      post '/users', to: 'users#create'
     end
   end
 end
