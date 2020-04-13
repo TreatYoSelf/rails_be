@@ -25,8 +25,8 @@ class SchedulerService
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
-                                   time_min: DateTime.now.rfc3339,
-                                   time_max: (DateTime.now + 12.hours).rfc3339,
+                                   time_min: DateTime.today.rfc3339,
+                                   time_max: (DateTime.today + 24.hours).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -75,17 +75,16 @@ class SchedulerService
   # If there was not an event scheduled then that day will not be in the availability hash
   # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
-    weekdays.each do |day|
+      day = DateTime.today.strftime('%A')
       availability[day] = available_time if !availability[day]
-    end
-    availability
+      availability
   end
 
   # Grabs a random activity, time frame and date, checks if it is in open availability
   # and if it is returns those three items in an array.
   def create_random_date_and_activity
     open_slot = false
-    activity = current_user.activities.sample(1).first
+    activity = @current_user.activities.sample(1).first
     until open_slot
       day = weekdays.sample(1)[0]
       time = hour_scheduled_times.sample(1)[0]
