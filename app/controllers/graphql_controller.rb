@@ -25,8 +25,9 @@ class GraphqlController < ApplicationController
     # return unless session[:user_id]
     # @current_user ||= User.find(session[:user_id]) if session[:user_id]
     # require 'pry';binding.pry
-    User.find_by(session[:user_id])
-    session[:user_id] = user.id
+    # user = User.find_by(session[:user_id])
+    require 'pry'; binding.pry
+    session[:user_id] = "hello"
   end
 
   # Handle form data, JSON body, or a blank value

@@ -40,10 +40,10 @@ module TreatYoSelf
 
     # For GraphiQL, in conjunction with above requirement of sprockets/railtie
     config.middleware.use Rack::MethodOverride
-    # config.middleware.use ActionDispatch::Flash
-    # config.session_store :cookie_store, key: '_interslice_session' # <-- this also configures session_options for use below
-    # config.middleware.use ActionDispatch::Cookies # Required for all session management (regardless of session_store)
-    # config.middleware.use config.session_store 
-    # config.session_options
+    config.middleware.use ActionDispatch::Flash
+    config.session_store :cookie_store, key: '_interslice_session' # <-- this also configures session_options for use below
+    config.middleware.use ActionDispatch::Cookies # Required for all session management (regardless of session_store)
+    config.middleware.use config.session_store 
+    config.session_options
   end
 end
