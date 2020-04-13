@@ -10,9 +10,6 @@ module Mutations
 
       def resolve(attributes)
         user = User.create(attributes)
-        require 'pry';binding.pry
-        session[:user_id] = user.id
-        user
       end
     end
   end

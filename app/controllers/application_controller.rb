@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::API
-	# helper_method :current_user
-	
+	include ActionController::Helpers
+
+  helper_method :current_user
+
 	def current_user
-		@current_user ||= User.find(session[:user_id]) if session[:user_id]
+		@current_user ||= User.find(session[:current_user]) if session[:current_user]
 	end
 end

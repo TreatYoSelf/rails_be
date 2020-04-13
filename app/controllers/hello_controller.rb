@@ -1,5 +1,5 @@
-class HelloController < ApplicationController
-	def index 
-	# require 'pry';binding.pry
+class SessionsController < ApplicationController
+	def create
+	 session[:current_user] = User.first.id
 	end
 end
