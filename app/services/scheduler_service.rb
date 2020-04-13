@@ -75,9 +75,8 @@ class SchedulerService
   # If there was not an event scheduled then that day will not be in the availability hash
   # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
-    weekdays.each do |day|
-      availability[day] = available_time if !availability[day]
-    end
+    day = DateTime.now.strftime("%A")
+    availability[day] = available_time if !availability[day]
     availability
   end
 
@@ -88,11 +87,12 @@ class SchedulerService
     activity = current_user.activities.sample(1).first
     if activity.nil?
       activity = "Yoga"
-    else 
+    else
       activity = activity.name
     end
+
     until open_slot
-      day = weekdays.sample(1)[0]
+      day = DateTime.now.strftime("%A")
       time = hour_scheduled_times.sample(1)[0]
       user_availability = final_availability(availability)
       open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
