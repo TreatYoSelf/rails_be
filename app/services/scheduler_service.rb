@@ -25,8 +25,8 @@ class SchedulerService
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
-                                   time_min: DateTime.today.rfc3339,
-                                   time_max: (DateTime.today + 24.hours).rfc3339,
+                                   time_min: DateTime.now.rfc3339,
+                                   time_max: (DateTime.now + 24.hours).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
