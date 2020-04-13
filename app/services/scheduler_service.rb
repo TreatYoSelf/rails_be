@@ -85,12 +85,13 @@ class SchedulerService
   def create_random_date_and_activity
     open_slot = false
     activity = @current_user.activities.sample(1).first
+    activity = activity.name || "Yoga"
     until open_slot
       day = weekdays.sample(1)[0]
       time = hour_scheduled_times.sample(1)[0]
       user_availability = final_availability(availability)
       open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
-      return [time.first, day, activity.name] if open_slot
+      return [time.first, day, activity] if open_slot
     end
   end
 
