@@ -111,7 +111,7 @@ class SchedulerService
     event_details(create_random_date_and_activity)
 
     @event = Google::Apis::CalendarV3::Event.new(
-      summary: @activity,
+      summary: "Treat Yo Self to: #{@activity}",
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
