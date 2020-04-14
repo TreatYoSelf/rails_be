@@ -6,7 +6,8 @@ describe 'create user and session' do
 							"first_name": "tyla",
 							"last_name": "smith",
               "email": "example@example.com",
-							"google_token": "asdlkfuower3423"
+							"google_token": "asdlkfuower3423",
+							"google_refresh_token": "456245245424524"
              }
 
 		post '/api/v1/users', params: params

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_234414) do
+ActiveRecord::Schema.define(version: 2020_04_14_155108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,12 @@ ActiveRecord::Schema.define(version: 2020_04_13_234414) do
 
   create_table "event_schedules", force: :cascade do |t|
     t.string "event_name"
-    t.datetime "event_start_time"
-    t.datetime "event_end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.float "event_start_time"
+    t.float "event_end_time"
+    t.string "weekday"
     t.index ["user_id"], name: "index_event_schedules_on_user_id"
   end
 
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_234414) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "self_care_time"
+    t.string "google_refresh_token"
   end
 
   add_foreign_key "category_activities", "activities"
