@@ -9,7 +9,6 @@ class SuggestionFacade
 												event_end_time: event_params[2],
 												weekday: event_params[3],
 												user_id: @current_user.id)
-require "pry"; binding.pry
 	end
 
 	private
