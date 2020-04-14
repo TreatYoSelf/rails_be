@@ -17,6 +17,9 @@ module Types
 
     field :get_activities, [Types::ActivityType], null: false, description: "returns all categories"
 
+    field :get_delights, [Types::ActivityType], null: false, description: "returns a set of activities" do
+      argument :id, ID, required: true
+    end
 
     # resolvers below/controller actions
 
@@ -35,10 +38,15 @@ module Types
 
     def get_category_activities(id:)
       Category.find_by(name: id)
-    end 
+    end
 
-    def get_activities 
+    def get_activities
       Activity.all
+    end
+
+    def get_delights(id:)
+      cat_name = Category.find(id)
+      possibilities = cat_name.activities.sample(5)
     end
   end
 end
