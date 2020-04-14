@@ -5,7 +5,3 @@ task :send_treats => :environment do
     SchedulerService.new(current_user).schedule_suggestions 
   end
 end
-
-task :send_reminders => :environment do
-  User.send_reminders
-end
