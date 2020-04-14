@@ -4,7 +4,9 @@ class SuggestionFacade
 	end
 
 	def create_event_schedule
-		@current_user.event_schedules.create(event_name: event_params[0], event_start_time: event_params[1], event_end_time: event_params[2])
+		@current_user.event_schedules.create(event_name: event_params[0],
+																				 event_start_time: event_params[1],
+																				 event_end_time: event_params[2])
 	end
 
 	private
