@@ -9,6 +9,8 @@ RSpec.describe User, type: :model do
 
 	describe "Relationships" do
 		it {should have_many :user_activities}
+		it {should have_many :event_schedules}
 		it {should have_many(:category_activities).through(:user_activities)}
+		it {should have_many(:activities).through(:category_activities)}
 	end
 end
