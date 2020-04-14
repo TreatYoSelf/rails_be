@@ -32,6 +32,6 @@ RSpec.describe "'/suggestions' endpoint" do
 		expect(response).to be_successful
 
 		data = JSON.parse(response.body)
-		expect(data[:scheduled_treat][:description]).to eq("Treat Yo Self")
+		expect(data["getUserEvents"]["event_name"]).not_to be_empty
 	end
 end
