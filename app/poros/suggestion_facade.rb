@@ -14,6 +14,7 @@ class SuggestionFacade
 	private
 
 	def event_params
+
 		new_event = schedule_activities
 		start = new_event.start.date_time.to_f
 		end_time = new_event.end.date_time.to_f

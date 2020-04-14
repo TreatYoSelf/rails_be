@@ -75,34 +75,38 @@ class SchedulerService
   # If there was not an event scheduled then that day will not be in the availability hash
   # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
-    day = DateTime.now.strftime("%A")
-    availability[day] = available_time if !availability[day]
+    @weekdays.each do |weekday|
+      availability[weekday] = available_time if !availability[weekday]
+    end
     availability
   end
 
   # Grabs a random activity, time frame and date, checks if it is in open availability
   # and if it is returns those three items in an array.
   def create_random_date_and_activity
-    open_slot = false
-    activity = current_user.activities.sample(1).first
-    if activity.nil?
-      activity = "Yoga"
-    else
-      activity = activity.name
-    end
+    # if activity.nil?
+    #   activity = "Yoga"
+    # else
+    #   activity = activity.name
+    # end
+    events = []
 
-    until open_slot
-      day = DateTime.now.strftime("%A")
-      time = hour_scheduled_times.sample(1)[0]
+    until events.size == 3
       user_availability = final_availability(availability)
-      open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
-      return [time.first, day, activity] if open_slot
+      activities = current_user.activities.sample(3)
+      time = hour_scheduled_times.sample(3)
+      day = @weekdays.sample(3)
+      activities.each_with_index do |activity, index|
+        if time[index].to_a.all? { |num| user_availability[day[index]].include?(num)}
+          events << [time[index].first, day[index], activity.name]
+          return events if events.size == 3
+        end
+      end
     end
   end
 
   # Takes the random date and activity array and formats them for the google api.
-  def event_details(create_random_date_and_activity)
-    details = create_random_date_and_activity
+  def event_details(details)
     start_time = details[0].to_f
     day = details[1].to_datetime
 
@@ -112,9 +116,8 @@ class SchedulerService
   end
 
   # Takes the formated details and inserts them into the google api event.new
-  def event
-    event_details(create_random_date_and_activity)
-
+  def event(details)
+    event_details(details)
     @event = Google::Apis::CalendarV3::Event.new(
       summary: "Treat Yo Self to: #{@activity}",
       description: 'Treat Yo Self',
@@ -154,6 +157,9 @@ class SchedulerService
 
   # Takes the new event details and inserts that event into the current user's calendar.
   def schedule_suggestions
-    result = get_calendar_service.insert_event("primary", event)
+  x = create_random_date_and_activity.map do |details|
+      get_calendar_service.insert_event("primary", event(details))
+    end
+require "pry"; binding.pry
   end
 end
