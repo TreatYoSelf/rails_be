@@ -19,7 +19,7 @@ RSpec.describe "'/suggestions' endpoint" do
 	activity_4 = Activity.create(name: "Shovel Snow", est_time: "01:15")
 	category.activities << [activity, activity_1]
 	category2.activities << [activity_2, activity_3]
-	print [activity.name, activity_1.name, activity_2.name, activity_3.name]
+
 	allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
  	allow(DateTime).to receive(:now).and_return(DateTime.parse('2020-04-13 13:31:31 -0700'))
 
@@ -31,7 +31,7 @@ RSpec.describe "'/suggestions' endpoint" do
 
 		expect(response).to be_successful
 
-		data = JSON.parse(response.body, symbolize_names: true)
-		expect(data[:scheduled_treat][:description]).to eq("Treat Yo Self")
+		data = JSON.parse(response.body)
+		expect(data["getUserEvents"]["event_name"]).not_to be_empty
 	end
 end
