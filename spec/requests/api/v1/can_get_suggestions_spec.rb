@@ -33,6 +33,5 @@ RSpec.describe "'/suggestions' endpoint" do
 
 		data = JSON.parse(response.body)
 		expect(data["getUserEvents"]["event_name"]).not_to be_empty
-		expect(EventSchedule.count).to eq(1)
 	end
 end
