@@ -10,6 +10,9 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :get_user_events, [Types::EventScheduleType], null: false, description: "returns user events" do
+      argument :id, ID, required: true
+    end
 
     field :get_category_activities, Types::CategoryType, null: false, description: "returns activities belonging to a category" do
       argument :id, ID, required: true
@@ -48,5 +51,10 @@ module Types
       cat_name = Category.find(id)
       possibilities = cat_name.activities.sample(5)
     end
+
+    def get_user_events(id:)
+      binding.pry
+      User.find(id)
+		end
   end
 end

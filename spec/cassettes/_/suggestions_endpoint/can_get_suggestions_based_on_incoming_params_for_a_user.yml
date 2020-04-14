@@ -14,7 +14,11 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
+<<<<<<< HEAD
       - Tue, 14 Apr 2020 16:50:59 GMT
+=======
+      - Tue, 14 Apr 2020 21:27:17 GMT
+>>>>>>> c4879ccf17beaf3d922c52e9b6fa2a866c123f66
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -23,22 +27,28 @@ http_interactions:
       - application/x-www-form-urlencoded
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
+<<<<<<< HEAD
       Expires:
       - Tue, 14 Apr 2020 16:50:59 GMT
       Date:
       - Tue, 14 Apr 2020 16:50:59 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
+=======
+>>>>>>> c4879ccf17beaf3d922c52e9b6fa2a866c123f66
       Vary:
       - Origin
       - X-Origin
+      Www-Authenticate:
+      - Bearer realm="https://accounts.google.com/", error=invalid_token
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
       - gzip
+<<<<<<< HEAD
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -425,15 +435,14 @@ http_interactions:
       - Tue, 14 Apr 2020 16:51:00 GMT
       Date:
       - Tue, 14 Apr 2020 16:51:00 GMT
+=======
+      Date:
+      - Tue, 14 Apr 2020 21:27:33 GMT
+      Expires:
+      - Tue, 14 Apr 2020 21:27:33 GMT
+>>>>>>> c4879ccf17beaf3d922c52e9b6fa2a866c123f66
       Cache-Control:
-      - private, max-age=0, must-revalidate, no-transform
-      Vary:
-      - Origin
-      - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Encoding:
-      - gzip
+      - private, max-age=0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -454,6 +463,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
+<<<<<<< HEAD
          "kind": "calendar#events",
          "etag": "\"p324d7ps8m3keg0g\"",
          "summary": "rerobran@gmail.com",
@@ -1571,13 +1581,26 @@ http_interactions:
             "method": "email",
             "minutes": 1440
            },
+=======
+         "error": {
+          "errors": [
+>>>>>>> c4879ccf17beaf3d922c52e9b6fa2a866c123f66
            {
-            "method": "popup",
-            "minutes": 1440
+            "domain": "global",
+            "reason": "authError",
+            "message": "Invalid Credentials",
+            "locationType": "header",
+            "location": "Authorization"
            }
-          ]
+          ],
+          "code": 401,
+          "message": "Invalid Credentials"
          }
         }
     http_version: null
+<<<<<<< HEAD
   recorded_at: Tue, 14 Apr 2020 16:51:03 GMT
+=======
+  recorded_at: Tue, 14 Apr 2020 21:27:17 GMT
+>>>>>>> c4879ccf17beaf3d922c52e9b6fa2a866c123f66
 recorded_with: VCR 5.1.0
