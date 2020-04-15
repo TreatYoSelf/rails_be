@@ -18,7 +18,7 @@ class SchedulerService
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
     service.authorization = @current_user.google_token
-    print @current_user.google_token
+    print @current_user
     print service
     service
   end
