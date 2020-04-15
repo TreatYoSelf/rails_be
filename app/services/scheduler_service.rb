@@ -52,8 +52,8 @@ class SchedulerService
       end_time = event.end.date if event.end.date_time.nil?
       weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
       weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
-      start_time = event.start.date if start_time.date_time.nil? 
-      start_time = start_time.date_time if event.start.date.nil? 
+      start_time = event.start.date if start_time.date_time.nil?
+      start_time = start_time.date_time if event.start.date.nil?
       # Takes start and end times and converts them to a stringtime and sets an event range.
       event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
@@ -87,16 +87,14 @@ class SchedulerService
   # Grabs a random activity, time frame and date, checks if it is in open availability
   # and if it is returns those three items in an array.
   def create_random_date_and_activity
-    # if activity.nil?
-    #   activity = "Yoga"
-    # else
-    #   activity = activity.name
-    # end
-    events = []
 
+    events = []
     until events.size == 3
       user_availability = final_availability(availability)
       activities = current_user.activities.sample(3)
+
+      activities = Activity.sample(3) if activities.nil?
+        
       time = hour_scheduled_times.sample(3)
       day = @weekdays.sample(3)
       activities.each_with_index do |activity, index|
