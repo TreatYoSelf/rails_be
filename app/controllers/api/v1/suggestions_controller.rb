@@ -21,6 +21,6 @@ class Api::V1::SuggestionsController < ApplicationController
 		end
 
 		activities = CategoryActivity.where(category_id: [category_ids])
-		current_user.category_activities << activities
+		#current_user.category_activities << activities
 	end
 end
