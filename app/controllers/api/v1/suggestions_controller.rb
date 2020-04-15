@@ -10,16 +10,12 @@ class Api::V1::SuggestionsController < ApplicationController
 
 	private
 
-	def suggestions
-
-	end
-
 	def create_user_activities
 		category_ids = params[:category].map do |name|
 			category = Category.find_by(name: name)
 			category.id
 		end
-
+require "pry"; binding.pry
 		activities = CategoryActivity.where(category_id: [category_ids])
 		current_user.category_activities << activities
 	end

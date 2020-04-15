@@ -1,5 +1,8 @@
 class Api::V1::UsersController < ApplicationController
 	def create
+		if user = User.find(params[:email])
+			user.update(google_token: params[:google_token])
+
 		user = User.create(user_params)
 		if user.save
 			session[:current_user] = user.id
