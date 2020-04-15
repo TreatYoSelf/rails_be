@@ -11,7 +11,7 @@ class Api::V1::SuggestionsController < ApplicationController
 	private
 
 	def create_user_activities
-		category_ids = params[:category].map do |name|
+		category_ids = params["_json"].map do |name|
 			category = Category.find_by(name: name)
 			category.id
 		end
