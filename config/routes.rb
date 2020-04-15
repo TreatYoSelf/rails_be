@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       post '/suggestions', to: 'suggestions#create'
       post '/users', to: 'users#create'
       get '/suggestions', to: 'suggestions#index'
+      namespace :users do
+        get '/events', to: 'events#index'
+      end
     end
   end
 end
