@@ -22,12 +22,14 @@ RSpec.describe "'/users/events' endpoint" do
 		
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+		user.reload
+		
 		get "/api/v1/users/events"
 
 		expect(response).to be_successful
 
 		data = JSON.parse(response.body)
-
+require 'pry';binding.pry
 		expect(data["events"][0]["event_name"]).not_to be_empty
 		expect(data["events"][1]["event_name"]).not_to be_empty
 	end
