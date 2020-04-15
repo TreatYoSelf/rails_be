@@ -7,7 +7,7 @@ require "date"
 RSpec.describe "/suggestions endpoint", :vcr do
 
 	it 'can make events for a user' do
-	token = ENV["GOOGLE_TOKEN"]
+	token = ENV["G_T"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
 
   category = Category.create(name: "Outdoors")

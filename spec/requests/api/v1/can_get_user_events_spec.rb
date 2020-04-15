@@ -7,7 +7,7 @@ require "date"
 RSpec.describe "'/users/events' endpoint" do
 	it 'can get events from params for a user', :vcr do
 
-		token = ENV["GOOGLE_TOKEN"]
+		token = ENV["G_T"]
 		user = User.create(first_name: 'Tyla', last_name: 'Smith', email: 'example@example.com', google_token: token)
 		category = Category.create(name: "Outdoors")
 
@@ -19,7 +19,7 @@ RSpec.describe "'/users/events' endpoint" do
 		time = DateTime.now.to_f
 		event = EventSchedule.create(event_name: activity.name, event_start_time: time, event_end_time: time, weekday: "Monday", user_id: user.id)
 		event_1 = EventSchedule.create(event_name: activity_1.name, event_start_time: time, event_end_time: time, weekday: "Monday", user_id: user.id)
-		
+
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
 		get "/api/v1/users/events"
