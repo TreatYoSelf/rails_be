@@ -1,12 +1,17 @@
 class Api::V1::SuggestionsController < ApplicationController
 	def create
 		create_user_activities
-		render json: { getUserEvents: suggestions }
+		render json: { response: "Successfully created user activities" }
+	end
+
+	def index
+		render json: { events: SuggestionFacade.new(current_user).create_event_schedule}
 	end
 
 	private
+
 	def suggestions
-		SuggestionFacade.new(current_user).create_event_schedule
+
 	end
 
 	def create_user_activities
