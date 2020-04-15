@@ -15,9 +15,11 @@ class SchedulerService
 
   # sets up initial Google Calendar Service with current user's google token
   def get_calendar_service
+    print @current_user.google_token
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
     service.authorization = @current_user.google_token
+    print service
     service
   end
 
