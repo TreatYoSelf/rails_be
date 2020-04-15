@@ -157,9 +157,8 @@ class SchedulerService
 
   # Takes the new event details and inserts that event into the current user's calendar.
   def schedule_suggestions
-  x = create_random_date_and_activity.map do |details|
+    create_random_date_and_activity.map do |details|
       get_calendar_service.insert_event("primary", event(details))
     end
-require "pry"; binding.pry
   end
 end
