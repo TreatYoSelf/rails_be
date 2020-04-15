@@ -7,7 +7,7 @@ require "date"
 RSpec.describe "'/suggestions' endpoint" do
 	it 'can get suggestions based on incoming params for a user', :vcr do
 
-	token = ENV["GOOGLE_TOKEN"]
+	token = ENV["G_T"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
 	category = Category.create(name: "Outdoors")
 	category2 = Category.create(name: "Mindfulness")
