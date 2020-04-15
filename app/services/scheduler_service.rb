@@ -45,7 +45,7 @@ class SchedulerService
 
   # Uses the array of events to subract event time frames from a user's availability.
   def availability
-    find_user_events.items.reduce({}) do |acc, event|
+    times ||= find_user_events.items.reduce({}) do |acc, event|
       # Sets start and end time frames from a single event
       start_time = event.original_start_time
       start_time = event.start if event.original_start_time.nil?
@@ -74,6 +74,7 @@ class SchedulerService
       acc[weekday] = [available_times - event_range].flatten
       acc
     end
+    times
   end
 
   # If there was not an event scheduled then that day will not be in the availability hash
