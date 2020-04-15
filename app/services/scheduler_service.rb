@@ -48,11 +48,14 @@ class SchedulerService
       # Sets start and end time frames from a single event
       start_time = event.original_start_time
       start_time = event.start if event.original_start_time.nil?
-      end_time = event.end.date_time
-
-      weekday = start_time.date_time.strftime("%A")
+      end_time = event.end.date_time if event.end.date.nil?
+      end_time = event.end.date if event.end.date_time.nil?
+      weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
+      weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
+      start_time = event.start.date if start_time.date_time.nil? 
+      start_time = start_time.date_time if event.start.date.nil? 
       # Takes start and end times and converts them to a stringtime and sets an event range.
-      event = start_time.date_time.strftime("%H:%M")..end_time.strftime("%H:%M")
+      event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
       # Similar to available_time this deletes any mintues over :59.
       event_range.delete_if do |time|
