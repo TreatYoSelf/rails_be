@@ -20,16 +20,15 @@ RSpec.describe "'/users/events' endpoint" do
 		event = EventSchedule.create(event_name: activity.name, event_start_time: time, event_end_time: time, weekday: "Monday", user_id: user.id)
 		event_1 = EventSchedule.create(event_name: activity_1.name, event_start_time: time, event_end_time: time, weekday: "Monday", user_id: user.id)
 		
+		user.reload
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-		user.reload
-		
+
 		get "/api/v1/users/events"
 
 		expect(response).to be_successful
 
 		data = JSON.parse(response.body)
-require 'pry';binding.pry
 		expect(data["events"][0]["event_name"]).not_to be_empty
 		expect(data["events"][1]["event_name"]).not_to be_empty
 	end
