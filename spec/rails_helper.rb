@@ -13,7 +13,14 @@ require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
 
+
 VCR.configure do |config|
+  vcr_mode = ENV['VCR_MODE'] =~ /rec/i ? :all : :new_episodes
+
+  config.default_cassette_options = {
+    record: vcr_mode,
+    match_requests_on: %i[method uri body]
+  }
   config.ignore_localhost = true
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock

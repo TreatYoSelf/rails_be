@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/suggestions', to: 'suggestions#create'
       post '/users', to: 'users#create'
-      
+      get '/suggestions', to: 'suggestions#index'
       namespace :users do
         get '/events', to: 'events#index'
       end

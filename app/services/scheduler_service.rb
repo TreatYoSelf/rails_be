@@ -26,7 +26,7 @@ class SchedulerService
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
                                    time_min: DateTime.now.rfc3339,
-                                   time_max: (DateTime.now + 24.hours).rfc3339,
+                                   time_max: (DateTime.now + 1.week).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -48,14 +48,11 @@ class SchedulerService
       # Sets start and end time frames from a single event
       start_time = event.original_start_time
       start_time = event.start if event.original_start_time.nil?
-      end_time = event.end.date_time if event.end.date.nil?
-      end_time = event.end.date if event.end.date_time.nil?
-      weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
-      weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
-      start_time = event.start.date if start_time.date_time.nil? 
-      start_time = start_time.date_time if event.start.date.nil? 
+      end_time = event.end.date_time
+
+      weekday = start_time.date_time.strftime("%A")
       # Takes start and end times and converts them to a stringtime and sets an event range.
-      event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
+      event = start_time.date_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
       # Similar to available_time this deletes any mintues over :59.
       event_range.delete_if do |time|
@@ -78,8 +75,9 @@ class SchedulerService
   # If there was not an event scheduled then that day will not be in the availability hash
   # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
-    day = DateTime.now.strftime("%A")
-    availability[day] = available_time if !availability[day]
+    @weekdays.each do |weekday|
+      availability[weekday] = available_time if !availability[weekday]
+    end
     availability
   end
 
@@ -95,7 +93,7 @@ class SchedulerService
     end
 
     until open_slot
-      day = DateTime.now.strftime("%A")
+      day = @weekdays.sample(1).first
       time = hour_scheduled_times.sample(1)[0]
       user_availability = final_availability(availability)
       open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
