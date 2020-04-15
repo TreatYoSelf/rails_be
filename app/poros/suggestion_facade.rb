@@ -4,22 +4,24 @@ class SuggestionFacade
 	end
 
 	def create_event_schedule
-		EventSchedule.create(event_name: event_params[0],
-												event_start_time: event_params[1],
-												event_end_time: event_params[2],
-												weekday: event_params[3],
+	    events =  schedule_activities.map do |event|
+			event_details = event_params(event)
+			EventSchedule.create(event_name: event_details[0],
+												event_start_time: event_details[1],
+												event_end_time: event_details[2],
+												weekday: event_details[3],
 												user_id: @current_user.id)
+		end
+		events
 	end
 
 	private
 
-	def event_params
-
-		new_event = schedule_activities
-		start = new_event.start.date_time.to_f
-		end_time = new_event.end.date_time.to_f
-		weekday = new_event.start.date_time.strftime("%A")
-		summary = new_event.summary
+	def event_params(event)
+		start = event.start.date_time.to_f
+		end_time = event.end.date_time.to_f
+		weekday = event.start.date_time.strftime("%A")
+		summary = event.summary
 		[summary, start, end_time, weekday]
 	end
 
