@@ -26,7 +26,7 @@ class SchedulerService
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
                                    time_min: DateTime.now.rfc3339,
-                                   time_max: (DateTime.now + 24.hours).rfc3339,
+                                   time_max: (DateTime.now + 1.week).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -119,7 +119,7 @@ class SchedulerService
   def event(details)
     event_details(details)
     @event = Google::Apis::CalendarV3::Event.new(
-      summary: "Treat Yo Self to: #{@activity}",
+      summary: @activity,
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
