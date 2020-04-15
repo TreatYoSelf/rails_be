@@ -27,7 +27,9 @@ RSpec.describe "'/users/events' endpoint" do
 		expect(response).to be_successful
 
 		data = JSON.parse(response.body)
-		
+
+		print response
+
 		expect(data["events"][0]["event_name"]).not_to be_empty
 		expect(data["events"][1]["event_name"]).not_to be_empty
 	end
