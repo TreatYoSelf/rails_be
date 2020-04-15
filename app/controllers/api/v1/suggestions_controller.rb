@@ -1,5 +1,6 @@
 class Api::V1::SuggestionsController < ApplicationController
 	def create
+	p params
 		create_user_activities
 		render json: { response: "Successfully created user activities" }
 	end
@@ -11,11 +12,10 @@ class Api::V1::SuggestionsController < ApplicationController
 	private
 
 	def create_user_activities
-		category_ids = params[:category].map do |name|
+		category_ids = params["_json"].map do |name|
 			category = Category.find_by(name: name)
 			category.id
 		end
-
 		activities = CategoryActivity.where(category_id: [category_ids])
 		current_user.category_activities << activities
 	end

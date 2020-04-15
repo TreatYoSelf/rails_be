@@ -24,7 +24,7 @@ RSpec.describe "'/suggestions' endpoint" do
  	allow(DateTime).to receive(:now).and_return(DateTime.parse('2020-04-13 13:31:31 -0700'))
 
 		user_params = {
-			category: ["Outdoors", "Mindfulness"]
+			"_json": ["Outdoors", "Mindfulness"]
 		}
 
 		post "/api/v1/suggestions", params: user_params
