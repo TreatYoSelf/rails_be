@@ -24,8 +24,8 @@ class SchedulerService
   # Uses Google Service to find a list of user events within current week time period
   def find_user_events
     calendar_id = "primary"
-    print get_calendar_service
-  print  get_calendar_service.list_events( calendar_id,
+
+    get_calendar_service.list_events( calendar_id,
                                    time_min: DateTime.now.rfc3339,
                                    time_max: (DateTime.now + 1.week).rfc3339,
                                    single_events: true,
