@@ -18,6 +18,9 @@ class SchedulerService
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
     service.authorization = @current_user.google_token
+    print "First Name: #{@current_user.first_name }"
+    print "Google Token: #{@current_user.google_token}"
+    print "Service: #{service}"
     service
   end
 
@@ -52,8 +55,8 @@ class SchedulerService
       end_time = event.end.date if event.end.date_time.nil?
       weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
       weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
-      start_time = event.start.date if start_time.date_time.nil? 
-      start_time = start_time.date_time if event.start.date.nil? 
+      start_time = event.start.date if start_time.date_time.nil?
+      start_time = start_time.date_time if event.start.date.nil?
       # Takes start and end times and converts them to a stringtime and sets an event range.
       event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
