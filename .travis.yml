@@ -1,12 +1,20 @@
 language: ruby
 rvm:
 - 2.6.3
+script:
+- bin/rails db:migrate RAILS_ENV=test
+- bundle exec rspec
 services:
 - postgresql
 before_install:
 - gem install bundler
 before_script:
+- cp config/database.yml.travis config/database.yml
 - psql -c 'create database treat_yo_self_test;' -U postgres
 deploy:
+  provider: heroku
   api_key:
     secure: bd5svfl3vjLvpNPTJ4nGcY0aJcGuIaUE6FzC1jg5uS8nzMmRfPKQkb0SCyZr8kmiSiT5Kt0bu7nfGychgDhXZr4MSClUaNOSX2yZvye1mVHQLBgwXmbcmtoqKRSDSlEoKmgr83Z18EVSqHcsvPFin/pRSw/PDFVgStl6nxuIa0dw7QWF9b1AbD8h51IOqzHovajoDAyJhRtepUnsjhzeqb+utjSOkE6El3ZK83nrw36tJs/ATw/lxwjh/bbg1yz03P1AI5xk5TX22aMo8FWFdAEU9bpv1lMdALzSySC2RiXWdlHOMvDs5/FvMd/iL7BQY4J39H7hJ8PMBgm+YYOXJBmoB9ZjDuKPxzhz0V1eFSsYCZs2Ief2W+8j9FPuog9MCzKMorj0qALFgqPhOnQXGofvF3rIScC3BUq3PZdj/O9WdFey/d2BObXgzUqPOehojARmMmr67RqXXzegtSsKZN0jT72TLlVw0NCiFiWBSNlI4+GMshrZuN67FtP7nmZAxj2JjSSAnrXBFurOsJgHe6+IFeVC2C9VG1aCUf6kNORx1U4S4d1sUGO36btR2mlc17bfbTWHmOBasNhds2UALXiwQ/v5N1jr3jJknrJkCLsOahmGKG+uVKmf9SKOvQ7y3ziXFMaD7UKMqOimh5JU+pgE5JwmEeUsO8hiPLC4/kc=
+  app: treat-yo-self-bjtw
+  on:
+    repo: TreatYoSelf/rails_be
