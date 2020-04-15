@@ -1,5 +1,6 @@
 class Api::V1::SuggestionsController < ApplicationController
 	def create
+	p params
 		create_user_activities
 		render json: { response: "Successfully created user activities" }
 	end
