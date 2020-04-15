@@ -24,7 +24,8 @@ class SchedulerService
   # Uses Google Service to find a list of user events within current week time period
   def find_user_events
     calendar_id = "primary"
-    response = get_calendar_service.list_events( calendar_id,
+    print service
+    get_calendar_service.list_events( calendar_id,
                                    time_min: DateTime.now.rfc3339,
                                    time_max: (DateTime.now + 1.week).rfc3339,
                                    single_events: true,
@@ -94,7 +95,7 @@ class SchedulerService
       activities = current_user.activities.sample(3)
 
       activities = Activity.sample(3) if activities.nil?
-        
+
       time = hour_scheduled_times.sample(3)
       day = @weekdays.sample(3)
       activities.each_with_index do |activity, index|
