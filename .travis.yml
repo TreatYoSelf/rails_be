@@ -9,7 +9,6 @@ services:
 before_install:
 - gem install bundler
 before_script:
-- cp config/database.yml.travis config/database.yml
 - psql -c 'create database treat_yo_self_test;' -U postgres
 deploy:
   provider: heroku
