@@ -26,7 +26,7 @@ RSpec.describe "/suggestions endpoint", :vcr do
 	allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
  	allow(DateTime).to receive(:now).and_return(DateTime.parse('2020-04-13 13:31:31 -0700'))
 
-
+		print token
     get "/api/v1/suggestions"
 
 		expect(response).to be_successful
