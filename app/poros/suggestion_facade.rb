@@ -17,6 +17,7 @@ class SuggestionFacade
 		summary = event.summary
 		start = event.start.date_time.to_f
 		end_time = event.end.date_time.to_f
+		[summary, start, end_time]
 	end
 
 	def schedule_activities
