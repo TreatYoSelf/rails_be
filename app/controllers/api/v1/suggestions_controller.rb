@@ -15,7 +15,6 @@ class Api::V1::SuggestionsController < ApplicationController
 			category = Category.find_by(name: name)
 			category.id
 		end
-require "pry"; binding.pry
 		activities = CategoryActivity.where(category_id: [category_ids])
 		current_user.category_activities << activities
 	end
