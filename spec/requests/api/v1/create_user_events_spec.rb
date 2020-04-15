@@ -4,8 +4,8 @@ require "googleauth"
 require "googleauth/stores/file_token_store"
 require "date"
 
-RSpec.describe "/suggestions endpoint" do
-	it 'can make events for a user', :vcr do
+RSpec.describe "/suggestions endpoint", :vcr do
+	it 'can make events for a user' do
 
 	token = ENV["GOOGLE_TOKEN"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
