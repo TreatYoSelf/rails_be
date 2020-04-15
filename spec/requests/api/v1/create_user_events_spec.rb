@@ -5,9 +5,8 @@ require "googleauth/stores/file_token_store"
 require "date"
 
 RSpec.describe "/suggestions endpoint", :vcr do
-	# VCR.turn_off! :ignore_cassettes => true
+
 	it 'can make events for a user' do
-	# WebMock.allow_net_connect!
 	token = ENV["GOOGLE_TOKEN"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
 
@@ -26,7 +25,6 @@ RSpec.describe "/suggestions endpoint", :vcr do
 	allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
  	allow(DateTime).to receive(:now).and_return(DateTime.parse('2020-04-13 13:31:31 -0700'))
 
-		print token
     get "/api/v1/suggestions"
 
 		expect(response).to be_successful
