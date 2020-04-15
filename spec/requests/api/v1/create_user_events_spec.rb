@@ -5,8 +5,9 @@ require "googleauth/stores/file_token_store"
 require "date"
 
 RSpec.describe "/suggestions endpoint", :vcr do
+	VCR.turn_off! :ignore_cassettes => true
 	it 'can make events for a user' do
-
+	WebMock.allow_net_connect!
 	token = ENV["GOOGLE_TOKEN"]
 	user = User.create(first_name: 'Becky', last_name: 'Smith', email: 'bsmith@gmail.com', google_token: token)
 
