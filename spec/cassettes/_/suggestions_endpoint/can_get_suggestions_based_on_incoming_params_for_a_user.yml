@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:29 GMT
+      - Wed, 15 Apr 2020 02:28:50 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -27,9 +27,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Wed, 15 Apr 2020 02:23:29 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:29 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -60,9 +60,9 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"p32s85s7aivkug0g\"",
+         "etag": "\"p33g9rv44m3kug0g\"",
          "summary": "tyladevon@gmail.com",
-         "updated": "2020-04-15T00:35:14.675Z",
+         "updated": "2020-04-15T02:23:31.852Z",
          "timeZone": "America/Denver",
          "accessRole": "owner",
          "defaultReminders": [
@@ -230,355 +230,13 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:29 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:51 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
     body:
       encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T14:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T13:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
-        Yo Self to: Meditate"}'
-    headers:
-      User-Agent:
-      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Wed, 15 Apr 2020 02:23:29 GMT
-      X-Goog-Api-Client:
-      - gl-ruby/2.6.3 gdcl/0.37.3
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer GOOGLE_TOKEN
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - Mon, 01 Jan 1990 00:00:00 GMT
-      Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
-      Etag:
-      - '"3173834820078000"'
-      Vary:
-      - Origin
-      - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Encoding:
-      - gzip
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      Content-Security-Policy:
-      - frame-ancestors 'self'
-      X-Xss-Protection:
-      - 1; mode=block
-      Server:
-      - GSE
-      Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-         "kind": "calendar#event",
-         "etag": "\"3173834820078000\"",
-         "id": "pdto5g3333qrs7o4mhotgeem1g",
-         "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=cGR0bzVnMzMzM3FyczdvNG1ob3RnZWVtMWcgdHlsYWRldm9uQG0",
-         "created": "2020-04-15T02:23:29.000Z",
-         "updated": "2020-04-15T02:23:30.066Z",
-         "summary": "Treat Yo Self to: Meditate",
-         "description": "Treat Yo Self",
-         "creator": {
-          "email": "tyladevon@gmail.com",
-          "self": true
-         },
-         "organizer": {
-          "email": "tyladevon@gmail.com",
-          "self": true
-         },
-         "start": {
-          "dateTime": "2020-04-13T07:00:00-06:00",
-          "timeZone": "America/Denver"
-         },
-         "end": {
-          "dateTime": "2020-04-13T08:00:00-06:00",
-          "timeZone": "America/Denver"
-         },
-         "iCalUID": "pdto5g3333qrs7o4mhotgeem1g@google.com",
-         "sequence": 0,
-         "reminders": {
-          "useDefault": false,
-          "overrides": [
-           {
-            "method": "popup",
-            "minutes": 60
-           },
-           {
-            "method": "popup",
-            "minutes": 1440
-           },
-           {
-            "method": "email",
-            "minutes": 1440
-           }
-          ]
-         }
-        }
-    http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:30 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-14T13:31:31-07:00&timeMin=2020-04-13T13:31:31-07:00
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      User-Agent:
-      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
-      X-Goog-Api-Client:
-      - gl-ruby/2.6.3 gdcl/0.37.3
-      Authorization:
-      - Bearer GOOGLE_TOKEN
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Expires:
-      - Wed, 15 Apr 2020 02:23:30 GMT
-      Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
-      Cache-Control:
-      - private, max-age=0, must-revalidate, no-transform
-      Vary:
-      - Origin
-      - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Encoding:
-      - gzip
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      Content-Security-Policy:
-      - frame-ancestors 'self'
-      X-Xss-Protection:
-      - 1; mode=block
-      Server:
-      - GSE
-      Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: |
-        {
-         "kind": "calendar#events",
-         "etag": "\"p3389p3s4m3kug0g\"",
-         "summary": "tyladevon@gmail.com",
-         "updated": "2020-04-15T02:23:30.066Z",
-         "timeZone": "America/Denver",
-         "accessRole": "owner",
-         "defaultReminders": [
-          {
-           "method": "popup",
-           "minutes": 30
-          }
-         ],
-         "items": [
-          {
-           "kind": "calendar#event",
-           "etag": "\"3169350920812000\"",
-           "id": "57nfi5bhl1bcdmc7sj51qmgm6d",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=NTduZmk1YmhsMWJjZG1jN3NqNTFxbWdtNmQgdHlsYWRldm9uQG0",
-           "created": "2020-03-13T01:51:50.000Z",
-           "updated": "2020-03-20T03:37:40.406Z",
-           "summary": "BVSD school cancelled due to virus",
-           "colorId": "5",
-           "creator": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "organizer": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "start": {
-            "date": "2020-03-13"
-           },
-           "end": {
-            "date": "2020-04-18"
-           },
-           "transparency": "transparent",
-           "iCalUID": "57nfi5bhl1bcdmc7sj51qmgm6d@google.com",
-           "sequence": 0,
-           "reminders": {
-            "useDefault": false
-           }
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"3173733937150000\"",
-           "id": "7kj9ks60evl2kctk6v8pqhrhj9",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=N2tqOWtzNjBldmwya2N0azZ2OHBxaHJoajkgdHlsYWRldm9uQG0",
-           "created": "2020-04-14T12:22:48.000Z",
-           "updated": "2020-04-14T12:22:48.575Z",
-           "summary": "Practice interview questions/Twitter",
-           "creator": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "organizer": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "start": {
-            "dateTime": "2020-04-13T20:00:00-06:00"
-           },
-           "end": {
-            "dateTime": "2020-04-13T21:00:00-06:00"
-           },
-           "iCalUID": "7kj9ks60evl2kctk6v8pqhrhj9@google.com",
-           "sequence": 0,
-           "reminders": {
-            "useDefault": true
-           }
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"3173741974370000\"",
-           "id": "44t3f507cdrjrqjgmvlgko2174",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=NDR0M2Y1MDdjZHJqcnFqZ212bGdrbzIxNzQgdHlsYWRldm9uQG0",
-           "created": "2020-04-14T12:23:06.000Z",
-           "updated": "2020-04-14T13:29:47.185Z",
-           "summary": "GU Slides/Twitter practice",
-           "creator": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "organizer": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "start": {
-            "dateTime": "2020-04-14T06:30:00-06:00"
-           },
-           "end": {
-            "dateTime": "2020-04-14T08:30:00-06:00"
-           },
-           "iCalUID": "44t3f507cdrjrqjgmvlgko2174@google.com",
-           "sequence": 0,
-           "reminders": {
-            "useDefault": true
-           }
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"3173787351100000\"",
-           "id": "4gv4h00grhncata4oa31u033nb_20200414T200000Z",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=NGd2NGgwMGdyaG5jYXRhNG9hMzF1MDMzbmJfMjAyMDA0MTRUMjAwMDAwWiB0eWxhZGV2b25AbQ",
-           "created": "2020-04-02T16:26:41.000Z",
-           "updated": "2020-04-14T19:47:55.550Z",
-           "summary": "Luna reading meeting",
-           "colorId": "4",
-           "creator": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "organizer": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "start": {
-            "dateTime": "2020-04-14T10:00:00-06:00",
-            "timeZone": "America/Denver"
-           },
-           "end": {
-            "dateTime": "2020-04-14T10:30:00-06:00",
-            "timeZone": "America/Denver"
-           },
-           "recurringEventId": "4gv4h00grhncata4oa31u033nb",
-           "originalStartTime": {
-            "dateTime": "2020-04-14T14:00:00-06:00",
-            "timeZone": "America/Denver"
-           },
-           "iCalUID": "4gv4h00grhncata4oa31u033nb@google.com",
-           "sequence": 2,
-           "reminders": {
-            "useDefault": true
-           }
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"3173787373918000\"",
-           "id": "7om2323af5t2vrbvnq4rhi9go0",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=N29tMjMyM2FmNXQydnJidm5xNHJoaTlnbzAgdHlsYWRldm9uQG0",
-           "created": "2020-04-10T19:38:46.000Z",
-           "updated": "2020-04-14T19:48:06.959Z",
-           "summary": "Meet with Brian/Twitter",
-           "creator": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "organizer": {
-            "email": "tyladevon@gmail.com",
-            "self": true
-           },
-           "start": {
-            "dateTime": "2020-04-14T14:15:00-06:00"
-           },
-           "end": {
-            "dateTime": "2020-04-14T15:00:00-06:00"
-           },
-           "iCalUID": "7om2323af5t2vrbvnq4rhi9go0@google.com",
-           "sequence": 1,
-           "reminders": {
-            "useDefault": true
-           }
-          }
-         ]
-        }
-    http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:30 GMT
-- request:
-    method: post
-    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
-    body:
-      encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T12:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T11:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T13:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T12:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
         Yo Self to: Swimming"}'
     headers:
       User-Agent:
@@ -588,7 +246,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Content-Type:
@@ -607,9 +265,9 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       Etag:
-      - '"3173834821348000"'
+      - '"3173835462671000"'
       Vary:
       - Origin
       - X-Origin
@@ -638,12 +296,12 @@ http_interactions:
       string: |
         {
          "kind": "calendar#event",
-         "etag": "\"3173834821348000\"",
-         "id": "rp822dcajfco4gu0bj56lql7cs",
+         "etag": "\"3173835462671000\"",
+         "id": "rkighsu5vd3ghtrq8fg7u3b2bs",
          "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=cnA4MjJkY2FqZmNvNGd1MGJqNTZscWw3Y3MgdHlsYWRldm9uQG0",
-         "created": "2020-04-15T02:23:30.000Z",
-         "updated": "2020-04-15T02:23:30.701Z",
+         "htmlLink": "https://www.google.com/calendar/event?eid=cmtpZ2hzdTV2ZDNnaHRycThmZzd1M2IyYnMgdHlsYWRldm9uQG0",
+         "created": "2020-04-15T02:28:51.000Z",
+         "updated": "2020-04-15T02:28:51.366Z",
          "summary": "Treat Yo Self to: Swimming",
          "description": "Treat Yo Self",
          "creator": {
@@ -655,25 +313,25 @@ http_interactions:
           "self": true
          },
          "start": {
-          "dateTime": "2020-04-13T05:00:00-06:00",
-          "timeZone": "America/Denver"
-         },
-         "end": {
           "dateTime": "2020-04-13T06:00:00-06:00",
           "timeZone": "America/Denver"
          },
-         "iCalUID": "rp822dcajfco4gu0bj56lql7cs@google.com",
+         "end": {
+          "dateTime": "2020-04-13T07:00:00-06:00",
+          "timeZone": "America/Denver"
+         },
+         "iCalUID": "rkighsu5vd3ghtrq8fg7u3b2bs@google.com",
          "sequence": 0,
          "reminders": {
           "useDefault": false,
           "overrides": [
            {
-            "method": "email",
-            "minutes": 1440
-           },
-           {
             "method": "popup",
             "minutes": 60
+           },
+           {
+            "method": "email",
+            "minutes": 1440
            },
            {
             "method": "popup",
@@ -683,7 +341,7 @@ http_interactions:
          }
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:30 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:51 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-14T13:31:31-07:00&timeMin=2020-04-13T13:31:31-07:00
@@ -698,7 +356,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -711,9 +369,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Wed, 15 Apr 2020 02:23:30 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:30 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -744,9 +402,9 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"p334frdc4m3kug0g\"",
+         "etag": "\"p33oehactm7kug0g\"",
          "summary": "tyladevon@gmail.com",
-         "updated": "2020-04-15T02:23:30.701Z",
+         "updated": "2020-04-15T02:28:51.366Z",
          "timeZone": "America/Denver",
          "accessRole": "owner",
          "defaultReminders": [
@@ -914,14 +572,14 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:31 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:51 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
     body:
       encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T12:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T11:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
-        Yo Self to: Hike"}'
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T10:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T09:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Yoga"}'
     headers:
       User-Agent:
       - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
@@ -930,7 +588,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:51 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Content-Type:
@@ -949,9 +607,9 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       Etag:
-      - '"3173834822459000"'
+      - '"3173835463961000"'
       Vary:
       - Origin
       - X-Origin
@@ -980,13 +638,13 @@ http_interactions:
       string: |
         {
          "kind": "calendar#event",
-         "etag": "\"3173834822459000\"",
-         "id": "ceres4c8ddjsjolqqsuci07ul8",
+         "etag": "\"3173835463961000\"",
+         "id": "1i3snhhlt10j638f7g6mpui10c",
          "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=Y2VyZXM0YzhkZGpzam9scXFzdWNpMDd1bDggdHlsYWRldm9uQG0",
-         "created": "2020-04-15T02:23:31.000Z",
-         "updated": "2020-04-15T02:23:31.255Z",
-         "summary": "Treat Yo Self to: Hike",
+         "htmlLink": "https://www.google.com/calendar/event?eid=MWkzc25oaGx0MTBqNjM4ZjdnNm1wdWkxMGMgdHlsYWRldm9uQG0",
+         "created": "2020-04-15T02:28:51.000Z",
+         "updated": "2020-04-15T02:28:52.010Z",
+         "summary": "Treat Yo Self to: Yoga",
          "description": "Treat Yo Self",
          "creator": {
           "email": "tyladevon@gmail.com",
@@ -997,14 +655,14 @@ http_interactions:
           "self": true
          },
          "start": {
-          "dateTime": "2020-04-13T05:00:00-06:00",
+          "dateTime": "2020-04-13T03:00:00-06:00",
           "timeZone": "America/Denver"
          },
          "end": {
-          "dateTime": "2020-04-13T06:00:00-06:00",
+          "dateTime": "2020-04-13T04:00:00-06:00",
           "timeZone": "America/Denver"
          },
-         "iCalUID": "ceres4c8ddjsjolqqsuci07ul8@google.com",
+         "iCalUID": "1i3snhhlt10j638f7g6mpui10c@google.com",
          "sequence": 0,
          "reminders": {
           "useDefault": false,
@@ -1025,7 +683,7 @@ http_interactions:
          }
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:31 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:52 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-14T13:31:31-07:00&timeMin=2020-04-13T13:31:31-07:00
@@ -1040,7 +698,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Authorization:
@@ -1053,9 +711,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Vary:
@@ -1086,9 +744,9 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"p33cebls4m3kug0g\"",
+         "etag": "\"p32891kctm7kug0g\"",
          "summary": "tyladevon@gmail.com",
-         "updated": "2020-04-15T02:23:31.255Z",
+         "updated": "2020-04-15T02:28:52.010Z",
          "timeZone": "America/Denver",
          "accessRole": "owner",
          "defaultReminders": [
@@ -1256,14 +914,14 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:31 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:52 GMT
 - request:
     method: post
     uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
     body:
       encoding: UTF-8
-      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T17:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T16:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
-        Yo Self to: Meditate"}'
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T19:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T18:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Swimming"}'
     headers:
       User-Agent:
       - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
@@ -1272,7 +930,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       X-Goog-Api-Client:
       - gl-ruby/2.6.3 gdcl/0.37.3
       Content-Type:
@@ -1291,9 +949,9 @@ http_interactions:
       Expires:
       - Mon, 01 Jan 1990 00:00:00 GMT
       Date:
-      - Wed, 15 Apr 2020 02:23:31 GMT
+      - Wed, 15 Apr 2020 02:28:52 GMT
       Etag:
-      - '"3173834823650000"'
+      - '"3173835465049000"'
       Vary:
       - Origin
       - X-Origin
@@ -1322,12 +980,354 @@ http_interactions:
       string: |
         {
          "kind": "calendar#event",
-         "etag": "\"3173834823650000\"",
-         "id": "vavilasemah9eskmhm9c8uj490",
+         "etag": "\"3173835465049000\"",
+         "id": "6ornghpj9bj7e0bgp3qsvhuj7s",
          "status": "confirmed",
-         "htmlLink": "https://www.google.com/calendar/event?eid=dmF2aWxhc2VtYWg5ZXNrbWhtOWM4dWo0OTAgdHlsYWRldm9uQG0",
-         "created": "2020-04-15T02:23:31.000Z",
-         "updated": "2020-04-15T02:23:31.852Z",
+         "htmlLink": "https://www.google.com/calendar/event?eid=Nm9ybmdocGo5Ymo3ZTBiZ3AzcXN2aHVqN3MgdHlsYWRldm9uQG0",
+         "created": "2020-04-15T02:28:52.000Z",
+         "updated": "2020-04-15T02:28:52.552Z",
+         "summary": "Treat Yo Self to: Swimming",
+         "description": "Treat Yo Self",
+         "creator": {
+          "email": "tyladevon@gmail.com",
+          "self": true
+         },
+         "organizer": {
+          "email": "tyladevon@gmail.com",
+          "self": true
+         },
+         "start": {
+          "dateTime": "2020-04-13T12:00:00-06:00",
+          "timeZone": "America/Denver"
+         },
+         "end": {
+          "dateTime": "2020-04-13T13:00:00-06:00",
+          "timeZone": "America/Denver"
+         },
+         "iCalUID": "6ornghpj9bj7e0bgp3qsvhuj7s@google.com",
+         "sequence": 0,
+         "reminders": {
+          "useDefault": false,
+          "overrides": [
+           {
+            "method": "popup",
+            "minutes": 60
+           },
+           {
+            "method": "email",
+            "minutes": 1440
+           },
+           {
+            "method": "popup",
+            "minutes": 1440
+           }
+          ]
+         }
+        }
+    http_version: null
+  recorded_at: Wed, 15 Apr 2020 02:28:52 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-14T13:31:31-07:00&timeMin=2020-04-13T13:31:31-07:00
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 15 Apr 2020 02:28:52 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.3 gdcl/0.37.3
+      Authorization:
+      - Bearer GOOGLE_TOKEN
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Wed, 15 Apr 2020 02:28:52 GMT
+      Date:
+      - Wed, 15 Apr 2020 02:28:52 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#events",
+         "etag": "\"p3309lsktm7kug0g\"",
+         "summary": "tyladevon@gmail.com",
+         "updated": "2020-04-15T02:28:52.552Z",
+         "timeZone": "America/Denver",
+         "accessRole": "owner",
+         "defaultReminders": [
+          {
+           "method": "popup",
+           "minutes": 30
+          }
+         ],
+         "items": [
+          {
+           "kind": "calendar#event",
+           "etag": "\"3169350920812000\"",
+           "id": "57nfi5bhl1bcdmc7sj51qmgm6d",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NTduZmk1YmhsMWJjZG1jN3NqNTFxbWdtNmQgdHlsYWRldm9uQG0",
+           "created": "2020-03-13T01:51:50.000Z",
+           "updated": "2020-03-20T03:37:40.406Z",
+           "summary": "BVSD school cancelled due to virus",
+           "colorId": "5",
+           "creator": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "start": {
+            "date": "2020-03-13"
+           },
+           "end": {
+            "date": "2020-04-18"
+           },
+           "transparency": "transparent",
+           "iCalUID": "57nfi5bhl1bcdmc7sj51qmgm6d@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3173733937150000\"",
+           "id": "7kj9ks60evl2kctk6v8pqhrhj9",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=N2tqOWtzNjBldmwya2N0azZ2OHBxaHJoajkgdHlsYWRldm9uQG0",
+           "created": "2020-04-14T12:22:48.000Z",
+           "updated": "2020-04-14T12:22:48.575Z",
+           "summary": "Practice interview questions/Twitter",
+           "creator": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-13T20:00:00-06:00"
+           },
+           "end": {
+            "dateTime": "2020-04-13T21:00:00-06:00"
+           },
+           "iCalUID": "7kj9ks60evl2kctk6v8pqhrhj9@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3173741974370000\"",
+           "id": "44t3f507cdrjrqjgmvlgko2174",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NDR0M2Y1MDdjZHJqcnFqZ212bGdrbzIxNzQgdHlsYWRldm9uQG0",
+           "created": "2020-04-14T12:23:06.000Z",
+           "updated": "2020-04-14T13:29:47.185Z",
+           "summary": "GU Slides/Twitter practice",
+           "creator": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-14T06:30:00-06:00"
+           },
+           "end": {
+            "dateTime": "2020-04-14T08:30:00-06:00"
+           },
+           "iCalUID": "44t3f507cdrjrqjgmvlgko2174@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3173787351100000\"",
+           "id": "4gv4h00grhncata4oa31u033nb_20200414T200000Z",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NGd2NGgwMGdyaG5jYXRhNG9hMzF1MDMzbmJfMjAyMDA0MTRUMjAwMDAwWiB0eWxhZGV2b25AbQ",
+           "created": "2020-04-02T16:26:41.000Z",
+           "updated": "2020-04-14T19:47:55.550Z",
+           "summary": "Luna reading meeting",
+           "colorId": "4",
+           "creator": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-14T10:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-14T10:30:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "recurringEventId": "4gv4h00grhncata4oa31u033nb",
+           "originalStartTime": {
+            "dateTime": "2020-04-14T14:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "4gv4h00grhncata4oa31u033nb@google.com",
+           "sequence": 2,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3173787373918000\"",
+           "id": "7om2323af5t2vrbvnq4rhi9go0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=N29tMjMyM2FmNXQydnJidm5xNHJoaTlnbzAgdHlsYWRldm9uQG0",
+           "created": "2020-04-10T19:38:46.000Z",
+           "updated": "2020-04-14T19:48:06.959Z",
+           "summary": "Meet with Brian/Twitter",
+           "creator": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "tyladevon@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-14T14:15:00-06:00"
+           },
+           "end": {
+            "dateTime": "2020-04-14T15:00:00-06:00"
+           },
+           "iCalUID": "7om2323af5t2vrbvnq4rhi9go0@google.com",
+           "sequence": 1,
+           "reminders": {
+            "useDefault": true
+           }
+          }
+         ]
+        }
+    http_version: null
+  recorded_at: Wed, 15 Apr 2020 02:28:52 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
+    body:
+      encoding: UTF-8
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-13T12:00:00+00:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-13T11:00:00+00:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Meditate"}'
+    headers:
+      User-Agent:
+      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.15.2 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 15 Apr 2020 02:28:52 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.3 gdcl/0.37.3
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer GOOGLE_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Wed, 15 Apr 2020 02:28:53 GMT
+      Etag:
+      - '"3173835466364000"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#event",
+         "etag": "\"3173835466364000\"",
+         "id": "i2ud613d5aa71fql2jqacjn7rg",
+         "status": "confirmed",
+         "htmlLink": "https://www.google.com/calendar/event?eid=aTJ1ZDYxM2Q1YWE3MWZxbDJqcWFjam43cmcgdHlsYWRldm9uQG0",
+         "created": "2020-04-15T02:28:53.000Z",
+         "updated": "2020-04-15T02:28:53.255Z",
          "summary": "Treat Yo Self to: Meditate",
          "description": "Treat Yo Self",
          "creator": {
@@ -1339,14 +1339,14 @@ http_interactions:
           "self": true
          },
          "start": {
-          "dateTime": "2020-04-13T10:00:00-06:00",
+          "dateTime": "2020-04-13T05:00:00-06:00",
           "timeZone": "America/Denver"
          },
          "end": {
-          "dateTime": "2020-04-13T11:00:00-06:00",
+          "dateTime": "2020-04-13T06:00:00-06:00",
           "timeZone": "America/Denver"
          },
-         "iCalUID": "vavilasemah9eskmhm9c8uj490@google.com",
+         "iCalUID": "i2ud613d5aa71fql2jqacjn7rg@google.com",
          "sequence": 0,
          "reminders": {
           "useDefault": false,
@@ -1367,5 +1367,5 @@ http_interactions:
          }
         }
     http_version: null
-  recorded_at: Wed, 15 Apr 2020 02:23:31 GMT
+  recorded_at: Wed, 15 Apr 2020 02:28:53 GMT
 recorded_with: VCR 5.1.0
