@@ -132,12 +132,12 @@ class SchedulerService
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: @start_date.rfc3339,
+        date_time: '2020-04-15T09:00:00-07:00',
         time_zone: 'America/Denver'
       ),
 
       end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: @end_date.rfc3339,
+        date_time: '2020-04-15T10:00:00-07:00',
         time_zone: 'America/Denver'
       ),
 
@@ -162,10 +162,10 @@ class SchedulerService
         ]
       )
     )
-    @event 
+    @event
   end
 
-  # Takes the new event details and inserts that event into the current user's calendar.
+  # Takes the new  event details and inserts that event into the current user's calendar.
   def schedule_suggestions
     result = get_calendar_service.insert_event("primary", event)
   end
