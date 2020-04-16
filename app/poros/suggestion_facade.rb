@@ -14,7 +14,7 @@ class SuggestionFacade
 
 	def event_params
 		event = schedule_activities
-		print event 
+		print "EVENT LOG: #{event}" 
 		summary = event.summary
 		start = event.start.date_time.to_f
 		end_time = event.end.date_time.to_f
