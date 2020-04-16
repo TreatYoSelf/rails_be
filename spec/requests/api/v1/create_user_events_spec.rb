@@ -29,6 +29,5 @@ RSpec.describe "/suggestions endpoint", :vcr do
 
 		expect(response).to be_successful
 		data = JSON.parse(response.body)
-require "pry"; binding.pry
 	end
 end
