@@ -18,9 +18,6 @@ class SchedulerService
     service ||= Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = "Treat Yo Self"
     service.authorization = @current_user.google_token
-    print "First Name: #{@current_user.first_name }"
-    print "Google Token: #{@current_user.google_token}"
-    print "Service: #{service}"
     service
   end
 
@@ -28,8 +25,8 @@ class SchedulerService
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
-                                   time_min: DateTime.now.rfc3339,
-                                   time_max: (DateTime.now + 1.week).rfc3339,
+                                   time_min: DateTime.now.new_offset('-0700').rfc3339,
+                                   time_max: (DateTime.now.new_offset('-0700') + 1.week).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -57,6 +54,7 @@ class SchedulerService
       weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
       start_time = event.start.date if start_time.date_time.nil?
       start_time = start_time.date_time if event.start.date.nil?
+
       # Takes start and end times and converts them to a stringtime and sets an event range.
       event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
@@ -111,9 +109,9 @@ class SchedulerService
   def event_details(create_random_date_and_activity)
     details = create_random_date_and_activity
     start_time = details[0].to_f
-    day = details[1].to_datetime.new_offset('-0700')
+    day = details[1].to_datetime.new_offset('-0600')
     @start_date = (day + start_time.hour)
-    @start_date + 1.week if @start_date > DateTime.now
+    @start_date + 1.week if @start_date < DateTime.now
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
@@ -123,16 +121,17 @@ class SchedulerService
     event_details(create_random_date_and_activity)
 
     EventSchedule.create!(event_name: @activity,
-                      event_start_time: @start_date.to_f,
-                      event_end_time: @end_date.to_f,
+                      event_start_time: @start_date.to_f * 1000,
+                      event_end_time: @end_date.to_f * 1000,
                       user_id: @current_user.id)
+
     @event = Google::Apis::CalendarV3::Event.new(
       summary: "Treat Yo Self to: #{@activity}",
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
         date_time: @start_date.rfc3339,
-         time_zone: 'America/Denver'
+        time_zone: 'America/Denver'
       ),
 
       end: Google::Apis::CalendarV3::EventDateTime.new(
