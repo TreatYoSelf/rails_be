@@ -114,13 +114,18 @@ class SchedulerService
     day = details[1].to_datetime
 
     @start_date = (day + start_time.hour)
-    @end_date = (@start_date + 1.hour).rfc3339
+    @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
 
   # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)
+
+    EventSchedule.create!(event_name: @activity,
+                      event_start_time: @start_date.to_f,
+                      event_end_time: @end_date.to_f,
+                      user_id: @current_user.id)
 
     @event = Google::Apis::CalendarV3::Event.new(
       summary: "Treat Yo Self to: #{@activity}",
@@ -132,7 +137,7 @@ class SchedulerService
       ),
 
       end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: @end_date,
+        date_time: @end_date.rfc3339,
         time_zone: 'America/Denver'
       ),
 
@@ -161,17 +166,6 @@ class SchedulerService
 
   # Takes the new event details and inserts that event into the current user's calendar.
   def schedule_suggestions
-    @result = get_calendar_service.insert_event("primary", event)
-  end
-
-  def create_event
-    schedule_suggestions
-print "RESULT OBJECT #{@result.end}"
-require "pry"; binding.pry
-    EventSchedule.create!(event_name: @result.summary,
-                      event_start_time: @result.start.date_time.to_f,
-                      event_end_time: @result.end.date_time.to_f,
-                      user_id: @current_user.id)
-
+    result = get_calendar_service.insert_event("primary", event)
   end
 end

@@ -30,7 +30,5 @@ RSpec.describe "/suggestions endpoint", :vcr do
 		expect(response).to be_successful
 
 		data = JSON.parse(response.body)
-
-		expect(data["events"]["user_id"]).to eq(user.id)
 	end
 end

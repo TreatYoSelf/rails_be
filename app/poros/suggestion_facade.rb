@@ -5,7 +5,7 @@ class SuggestionFacade
 
 	def schedule_activities
 		scheduler = SchedulerService.new(@current_user)
-		scheduler.create_event
+		scheduler.schedule_suggestions
 	end
 	# def create_event_schedule
 	# 		EventSchedule.create!(event_name: event_params[0],
