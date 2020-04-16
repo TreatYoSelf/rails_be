@@ -161,7 +161,16 @@ class SchedulerService
 
   # Takes the new event details and inserts that event into the current user's calendar.
   def schedule_suggestions
-    result = get_calendar_service.insert_event("primary", event)
-    print "SCHEDULE SUGGESTIONS #{result}"
+    @result = get_calendar_service.insert_event("primary", event)
+  end
+
+  def create_event
+    schedule_suggestions
+print "RESULT OBJECT #{@result}"
+    EventSchedule.create!(event_name: @result.summary,
+                      event_start_time: @result.start.date_time.to_f,
+                      event_end_time: @result.end.date_time.to_f,
+                      user_id: @current_user.id)
+
   end
 end
