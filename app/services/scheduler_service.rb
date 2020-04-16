@@ -111,9 +111,9 @@ class SchedulerService
   def event_details(create_random_date_and_activity)
     details = create_random_date_and_activity
     start_time = details[0].to_f
-    day = details[1].to_datetime
-
+    day = details[1].to_datetime.new_offset('-0700')
     @start_date = (day + start_time.hour)
+    @start_date + 1.week if @start_date > DateTime.now
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
@@ -123,21 +123,20 @@ class SchedulerService
     event_details(create_random_date_and_activity)
 
     EventSchedule.create!(event_name: @activity,
-                      event_start_time: DateTime.now.to_f,
-                      event_end_time: (DateTime.now + 1.hour).to_f,
+                      event_start_time: @start_date.to_f,
+                      event_end_time: @end_date.to_f,
                       user_id: @current_user.id)
-
     @event = Google::Apis::CalendarV3::Event.new(
       summary: "Treat Yo Self to: #{@activity}",
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: '2020-04-15T09:00:00-07:00',
-        time_zone: 'America/Denver'
+        date_time: @start_date.rfc3339,
+         time_zone: 'America/Denver'
       ),
 
       end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: '2020-04-15T10:00:00-07:00',
+        date_time: @end_date.rfc3339,
         time_zone: 'America/Denver'
       ),
 
@@ -168,6 +167,5 @@ class SchedulerService
   # Takes the new  event details and inserts that event into the current user's calendar.
   def schedule_suggestions
     result = get_calendar_service.insert_event("primary", event)
-    print "RESULT ===  #{result}"
   end
 end
