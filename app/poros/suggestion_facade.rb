@@ -7,6 +7,7 @@ class SuggestionFacade
 		scheduler = SchedulerService.new(@current_user)
 		scheduler.schedule_suggestions
 	end
+
 	# def create_event_schedule
 	# 		EventSchedule.create!(event_name: event_params[0],
 	# 											event_start_time: event_params[1],
@@ -23,6 +24,4 @@ class SuggestionFacade
 	# 	end_time = event.end.date_time.to_f
 	# 	[summary, start, end_time]
 	# end
-
-
 end
