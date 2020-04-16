@@ -123,8 +123,8 @@ class SchedulerService
     event_details(create_random_date_and_activity)
 
     EventSchedule.create!(event_name: @activity,
-                      event_start_time: @start_date.to_f,
-                      event_end_time: @end_date.to_f,
+                      event_start_time: DateTime.now.to_f,
+                      event_end_time: (DateTime.now + 1.hour).to_f,
                       user_id: @current_user.id)
 
     @event = Google::Apis::CalendarV3::Event.new(
