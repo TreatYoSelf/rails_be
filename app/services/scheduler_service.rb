@@ -162,6 +162,7 @@ class SchedulerService
         ]
       )
     )
+    @event 
   end
 
   # Takes the new event details and inserts that event into the current user's calendar.

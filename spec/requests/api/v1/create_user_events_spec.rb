@@ -28,7 +28,6 @@ RSpec.describe "/suggestions endpoint", :vcr do
     get "/api/v1/suggestions"
 
 		expect(response).to be_successful
-
-		data = JSON.parse(response.body)
+data = JSON.parse(response.body)
 	end
 end
