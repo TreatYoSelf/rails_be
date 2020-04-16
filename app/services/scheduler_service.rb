@@ -166,7 +166,8 @@ class SchedulerService
 
   def create_event
     schedule_suggestions
-print "RESULT OBJECT #{@result}"
+print "RESULT OBJECT #{@result.end}"
+require "pry"; binding.pry
     EventSchedule.create!(event_name: @result.summary,
                       event_start_time: @result.start.date_time.to_f,
                       event_end_time: @result.end.date_time.to_f,
