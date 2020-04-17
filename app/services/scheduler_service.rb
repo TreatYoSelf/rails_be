@@ -111,7 +111,7 @@ class SchedulerService
     start_time = details[0].to_f
     day = details[1].to_datetime.new_offset('-0600')
     @start_date = (day + start_time.hour)
-    @start_date + 1.week if @start_date < DateTime.now
+    @start_date + 1.week
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
@@ -119,7 +119,6 @@ class SchedulerService
   # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)
-
     EventSchedule.create!(event_name: @activity,
                       event_start_time: @start_date.to_f * 1000,
                       event_end_time: @end_date.to_f * 1000,
