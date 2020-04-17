@@ -4,7 +4,7 @@ Treat Yo Self aims to help you add self care activities into your busy schedule 
 
 ## Treat Yo Self Deployment
 
-[Deployed Heroku Site](https://treat-yo-self-bjtw.herokuapp.com/)<br>
+[Deployed BE Heroku Site](https://treat-yo-self-bjtw.herokuapp.com/)<br>
 [Treat Yo Self Github Organization]( https://github.com/TreatYoSelf)<br>
 [Front End Github Repo](https://github.com/TreatYoSelf/react_fe)<br>
 
