@@ -4,16 +4,16 @@ Treat Yo Self aims to help you add self care activities into your busy schedule 
 
 ## Treat Yo Self Deployment
 
-[Deployed Heroku Site](https://treat-yo-self-bjtw.herokuapp.com/)
-[Treat Yo Self Github Organization]( https://github.com/TreatYoSelf)
-[Front End Github Repo](https://github.com/TreatYoSelf/react_fe)
+[Deployed Heroku Site](https://treat-yo-self-bjtw.herokuapp.com/)<br>
+[Treat Yo Self Github Organization]( https://github.com/TreatYoSelf)<br>
+[Front End Github Repo](https://github.com/TreatYoSelf/react_fe)<br>
 
 ## Team Members
 
-[Becky Robran](https://github.com/rer7891)
-[Joel Lacey](https://github.com/joel-oe-lacey)
-[Tyla Devon Gillings](https://github.com/tyladevon)
-[Wren Steitle](https://github.com/wrenisit)
+[Becky Robran](https://github.com/rer7891) <br>
+[Joel Lacey](https://github.com/joel-oe-lacey) <br>
+[Tyla Devon Gillings](https://github.com/tyladevon)<br>
+[Wren Steitle](https://github.com/wrenisit)<br>
 
 ## Treat Yo Self API and Schema
 The TreatYoSelf API is a combination of a GraphQL API and several Restful endpoints. The data base is queried with GraphQl while third part API calls are consumed using Restful endpoints. The app is built with Ruby on Rails and Postgres to expose data to a React/Native Front End. It also utilizes the Google Oauth and Calendar API to fill in a user's calendar with activities during open time slots.
