@@ -108,10 +108,12 @@ class SchedulerService
   # Takes the random date and activity array and formats them for the google api.
   def event_details(create_random_date_and_activity)
     details = create_random_date_and_activity
-    start_time = details[0].to_f
-    day = details[1].to_datetime.new_offset('-0600')
-    @start_date = (day + start_time.hour)
-    @start_date + 1.week
+
+    Time.zone = 'Mountain Time (US & Canada)'
+    day = Date.strptime(details[1], '%A')
+require "pry"; binding.pry
+    day = day + 1.week if day > DateTime.now
+    @start_date  = day + (details[0].to_f.hour)
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
