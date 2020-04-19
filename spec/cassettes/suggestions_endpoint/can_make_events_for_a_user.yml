@@ -31471,4 +31471,435 @@ http_interactions:
         }
     http_version: null
   recorded_at: Thu, 16 Apr 2020 20:28:00 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-26T11:09:14-06:00&timeMin=2020-04-19T11:09:14-06:00
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.14.6 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 19 Apr 2020 17:09:14 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.3 gdcl/0.37.3
+      Authorization:
+      - Bearer ya29.a0Ae4lvC2UzdqWolZBP1kPOtVhOYC-CFLKXkhUEellgPAkcjTmIrXpKdlJSz6S7y5rR1fpYKQ8LaxzQ-uSH69uyOgyRplUeTHJ4tsDmGcITQw42N87yUxFk4Tl_73he-NNcb0om4AWTrGR8Y4cy4CK3mo-x5Bqh74KE_8
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sun, 19 Apr 2020 17:09:14 GMT
+      Date:
+      - Sun, 19 Apr 2020 17:09:14 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#events",
+         "etag": "\"p33k81o5qvfqeg0g\"",
+         "summary": "treatyoselfturing@gmail.com",
+         "updated": "2020-04-19T17:00:14.417Z",
+         "timeZone": "America/Denver",
+         "accessRole": "owner",
+         "defaultReminders": [
+          {
+           "method": "popup",
+           "minutes": 30
+          }
+         ],
+         "items": [
+          {
+           "kind": "calendar#event",
+           "etag": "\"3174631226750000\"",
+           "id": "2n5f29poqd93f57pl2n2a64kr4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Mm41ZjI5cG9xZDkzZjU3cGwybjJhNjRrcjQgdHJlYXR5b3NlbGZ0dXJpbmdAbQ",
+           "created": "2020-04-19T17:00:13.000Z",
+           "updated": "2020-04-19T17:00:13.443Z",
+           "summary": "Treat Yo Self to: Swimming",
+           "description": "Treat Yo Self",
+           "creator": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-24T10:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-24T11:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "2n5f29poqd93f57pl2n2a64kr4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false,
+            "overrides": [
+             {
+              "method": "popup",
+              "minutes": 60
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             }
+            ]
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3174631224951000\"",
+           "id": "4lr4f5jsslno2mc3quj30e11mk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NGxyNGY1anNzbG5vMm1jM3F1ajMwZTExbWsgdHJlYXR5b3NlbGZ0dXJpbmdAbQ",
+           "created": "2020-04-19T17:00:12.000Z",
+           "updated": "2020-04-19T17:00:12.545Z",
+           "summary": "Treat Yo Self to: Yoga",
+           "description": "Treat Yo Self",
+           "creator": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-25T15:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-25T16:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "4lr4f5jsslno2mc3quj30e11mk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false,
+            "overrides": [
+             {
+              "method": "popup",
+              "minutes": 60
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             }
+            ]
+           }
+          }
+         ]
+        }
+    http_version: null
+  recorded_at: Sun, 19 Apr 2020 17:09:14 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events?orderBy=startTime&singleEvents=true&timeMax=2020-04-26T11:10:04-06:00&timeMin=2020-04-19T11:10:04-06:00
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.14.6 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 19 Apr 2020 17:10:04 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.3 gdcl/0.37.3
+      Authorization:
+      - Bearer ya29.a0Ae4lvC2UzdqWolZBP1kPOtVhOYC-CFLKXkhUEellgPAkcjTmIrXpKdlJSz6S7y5rR1fpYKQ8LaxzQ-uSH69uyOgyRplUeTHJ4tsDmGcITQw42N87yUxFk4Tl_73he-NNcb0om4AWTrGR8Y4cy4CK3mo-x5Bqh74KE_8
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sun, 19 Apr 2020 17:10:04 GMT
+      Date:
+      - Sun, 19 Apr 2020 17:10:04 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#events",
+         "etag": "\"p33k81o5qvfqeg0g\"",
+         "summary": "treatyoselfturing@gmail.com",
+         "updated": "2020-04-19T17:00:14.417Z",
+         "timeZone": "America/Denver",
+         "accessRole": "owner",
+         "defaultReminders": [
+          {
+           "method": "popup",
+           "minutes": 30
+          }
+         ],
+         "items": [
+          {
+           "kind": "calendar#event",
+           "etag": "\"3174631226750000\"",
+           "id": "2n5f29poqd93f57pl2n2a64kr4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Mm41ZjI5cG9xZDkzZjU3cGwybjJhNjRrcjQgdHJlYXR5b3NlbGZ0dXJpbmdAbQ",
+           "created": "2020-04-19T17:00:13.000Z",
+           "updated": "2020-04-19T17:00:13.443Z",
+           "summary": "Treat Yo Self to: Swimming",
+           "description": "Treat Yo Self",
+           "creator": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-24T10:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-24T11:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "2n5f29poqd93f57pl2n2a64kr4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false,
+            "overrides": [
+             {
+              "method": "popup",
+              "minutes": 60
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             }
+            ]
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3174631224951000\"",
+           "id": "4lr4f5jsslno2mc3quj30e11mk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NGxyNGY1anNzbG5vMm1jM3F1ajMwZTExbWsgdHJlYXR5b3NlbGZ0dXJpbmdAbQ",
+           "created": "2020-04-19T17:00:12.000Z",
+           "updated": "2020-04-19T17:00:12.545Z",
+           "summary": "Treat Yo Self to: Yoga",
+           "description": "Treat Yo Self",
+           "creator": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "organizer": {
+            "email": "treatyoselfturing@gmail.com",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2020-04-25T15:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2020-04-25T16:00:00-06:00",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "4lr4f5jsslno2mc3quj30e11mk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": false,
+            "overrides": [
+             {
+              "method": "popup",
+              "minutes": 60
+             },
+             {
+              "method": "popup",
+              "minutes": 1440
+             }
+            ]
+           }
+          }
+         ]
+        }
+    http_version: null
+  recorded_at: Sun, 19 Apr 2020 17:10:04 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/calendar/v3/calendars/primary/events
+    body:
+      encoding: UTF-8
+      string: '{"description":"Treat Yo Self","end":{"dateTime":"2020-04-25T18:00:00-06:00","timeZone":"America/Denver"},"reminders":{"overrides":[{"method":"email","minutes":1440},{"method":"popup","minutes":1440},{"method":"popup","minutes":60}],"useDefault":false},"start":{"dateTime":"2020-04-25T17:00:00-06:00","timeZone":"America/Denver"},"summary":"Treat
+        Yo Self to: Meditate"}'
+    headers:
+      User-Agent:
+      - Treat Yo Self/0.0.0 google-api-ruby-client/0.37.3 Mac OS X/10.14.6 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sun, 19 Apr 2020 17:10:04 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.3 gdcl/0.37.3
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer ya29.a0Ae4lvC2UzdqWolZBP1kPOtVhOYC-CFLKXkhUEellgPAkcjTmIrXpKdlJSz6S7y5rR1fpYKQ8LaxzQ-uSH69uyOgyRplUeTHJ4tsDmGcITQw42N87yUxFk4Tl_73he-NNcb0om4AWTrGR8Y4cy4CK3mo-x5Bqh74KE_8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sun, 19 Apr 2020 17:10:05 GMT
+      Etag:
+      - '"3174632409614000"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - frame-ancestors 'self'
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#event",
+         "etag": "\"3174632409614000\"",
+         "id": "cft16dmciq43ohahf5fdpaaujk",
+         "status": "confirmed",
+         "htmlLink": "https://www.google.com/calendar/event?eid=Y2Z0MTZkbWNpcTQzb2hhaGY1ZmRwYWF1amsgdHJlYXR5b3NlbGZ0dXJpbmdAbQ",
+         "created": "2020-04-19T17:10:04.000Z",
+         "updated": "2020-04-19T17:10:04.941Z",
+         "summary": "Treat Yo Self to: Meditate",
+         "description": "Treat Yo Self",
+         "creator": {
+          "email": "treatyoselfturing@gmail.com",
+          "self": true
+         },
+         "organizer": {
+          "email": "treatyoselfturing@gmail.com",
+          "self": true
+         },
+         "start": {
+          "dateTime": "2020-04-25T17:00:00-06:00",
+          "timeZone": "America/Denver"
+         },
+         "end": {
+          "dateTime": "2020-04-25T18:00:00-06:00",
+          "timeZone": "America/Denver"
+         },
+         "iCalUID": "cft16dmciq43ohahf5fdpaaujk@google.com",
+         "sequence": 0,
+         "reminders": {
+          "useDefault": false,
+          "overrides": [
+           {
+            "method": "email",
+            "minutes": 1440
+           },
+           {
+            "method": "popup",
+            "minutes": 60
+           },
+           {
+            "method": "popup",
+            "minutes": 1440
+           }
+          ]
+         }
+        }
+    http_version: null
+  recorded_at: Sun, 19 Apr 2020 17:10:05 GMT
 recorded_with: VCR 5.1.0

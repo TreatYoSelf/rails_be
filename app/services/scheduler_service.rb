@@ -25,8 +25,8 @@ class SchedulerService
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
-                                   time_min: DateTime.now.new_offset('-0700').rfc3339,
-                                   time_max: (DateTime.now.new_offset('-0700') + 1.week).rfc3339,
+                                   time_min: Time.zone.now.to_datetime.new_offset('-0600').rfc3339,
+                                   time_max: (Time.zone.now.to_datetime.new_offset('-0600') + 1.week).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -111,8 +111,7 @@ class SchedulerService
 
     Time.zone = 'Mountain Time (US & Canada)'
     day = Date.strptime(details[1], '%A')
-require "pry"; binding.pry
-    day = day + 1.week if day > DateTime.now
+    day = day + 1.week if day < Time.zone.now.to_datetime.new_offset('-0600')
     @start_date  = day + (details[0].to_f.hour)
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
