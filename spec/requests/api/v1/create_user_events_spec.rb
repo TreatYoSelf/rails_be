@@ -13,11 +13,11 @@ RSpec.describe "/suggestions endpoint", :vcr do
   category = Category.create(name: "Outdoors")
   category2 = Category.create(name: "Mindfulness")
 
-  activity = Activity.create(name: "Hike", est_time: "01:15")
-  activity_1 = Activity.create(name: "Swimming", est_time: "01:15")
-  activity_2 = Activity.create(name: "Yoga", est_time: "01:15")
-  activity_3 = Activity.create(name: "Meditate", est_time: "01:15")
-  activity_4 = Activity.create(name: "Shovel Snow", est_time: "01:15")
+  activity = Activity.create(name: "Hike", est_time: 60)
+  activity_1 = Activity.create(name: "Swimming", est_time: 30)
+  activity_2 = Activity.create(name: "Yoga", est_time: 30)
+  activity_3 = Activity.create(name: "Meditate", est_time: 15)
+  activity_4 = Activity.create(name: "Shovel Snow", est_time: 60)
   category.activities << [activity, activity_1]
   category2.activities << [activity_2, activity_3]
 
