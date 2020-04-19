@@ -25,8 +25,8 @@ class SchedulerService
   def find_user_events
     calendar_id = "primary"
     response = get_calendar_service.list_events( calendar_id,
-                                   time_min: DateTime.now.new_offset('-0700').rfc3339,
-                                   time_max: (DateTime.now.new_offset('-0700') + 1.week).rfc3339,
+                                   time_min: Time.zone.now.to_datetime.new_offset('-0600').rfc3339,
+                                   time_max: (Time.zone.now.to_datetime.new_offset('-0600') + 1.week).rfc3339,
                                    single_events: true,
                                    order_by: "startTime" )
   end
@@ -54,7 +54,6 @@ class SchedulerService
       weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
       start_time = event.start.date if start_time.date_time.nil?
       start_time = start_time.date_time if event.start.date.nil?
-
       # Takes start and end times and converts them to a stringtime and sets an event range.
       event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
       event_range = event.to_a
@@ -100,6 +99,7 @@ class SchedulerService
       day = @weekdays.sample(1).first
       time = hour_scheduled_times.sample(1)[0]
       user_availability = final_availability(availability)
+
       open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
       return [time.first, day, activity] if open_slot
     end
@@ -108,10 +108,11 @@ class SchedulerService
   # Takes the random date and activity array and formats them for the google api.
   def event_details(create_random_date_and_activity)
     details = create_random_date_and_activity
-    start_time = details[0].to_f
-    day = details[1].to_datetime.new_offset('-0600')
-    @start_date = (day + start_time.hour)
-    @start_date + 1.week
+
+    Time.zone = 'Mountain Time (US & Canada)'
+    day = Date.strptime(details[1], '%A')
+    day = day + 1.week if day < Time.now
+    @start_date  = day + (details[0].to_f.hour)
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
   end
@@ -119,10 +120,10 @@ class SchedulerService
   # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)
-    EventSchedule.create!(event_name: @activity,
-                      event_start_time: @start_date.to_f * 1000,
-                      event_end_time: @end_date.to_f * 1000,
-                      user_id: @current_user.id)
+    # EventSchedule.create!(event_name: @activity,
+    #                   event_start_time: @start_date.to_f * 1000,
+    #                   event_end_time: @end_date.to_f * 1000,
+    #                   user_id: @current_user.id)
 
     @event = Google::Apis::CalendarV3::Event.new(
       summary: "Treat Yo Self to: #{@activity}",
@@ -142,10 +143,6 @@ class SchedulerService
         use_default: false,
 
         overrides: [
-          Google::Apis::CalendarV3::EventReminder.new(
-            reminder_method: 'email',
-            minutes: 24 * 60
-          ),
 
           Google::Apis::CalendarV3::EventReminder.new(
             reminder_method: 'popup',
