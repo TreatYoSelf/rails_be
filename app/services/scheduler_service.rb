@@ -111,7 +111,7 @@ class SchedulerService
 
     Time.zone = 'Mountain Time (US & Canada)'
     day = Date.strptime(details[1], '%A')
-    day = day + 1.week if day < Time.now
+    day = day + 1.week if day < Time.zone.now.to_datetime.new_offset('-0600')
     @start_date  = day + (details[0].to_f.hour)
     @end_date = (@start_date + 1.hour)
     @activity = details[2]
