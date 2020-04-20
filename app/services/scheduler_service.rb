@@ -112,6 +112,7 @@ class SchedulerService
     @activity = details[2].name
   end
 
+
   # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)

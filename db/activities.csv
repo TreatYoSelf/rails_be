@@ -1,13 +1,23 @@
 Title,Time Requirement,Cost?,Type
 Outdoor Walk,60,FALSE,Outdoor
-Hiking,90,FALSE,Outdoor
+Hiking,60,FALSE,Outdoor
 Bubble Bath,30,FALSE,Beauty
 Face Mask,30,TRUE,Beauty
 Manicure,60,TRUE,Beauty
 Indoor Yoga,60,FALSE,Exercise
-Clean Out Sock Drawer,30,FALSE,Home
+Bake a Cake,30,FALSE,Home
 Arrange Book Shelf,30,FALSE,Organizing
-Make A Special Meal,60,TRUE,Food
-5 Minute Breathing Exercise,30,FALSE,Mindfulness
+Make A Special Meal,60,TRUE,Home
+Mindful Breathing Exercise, 30,FALSE,Mindfulness
 Yoga In The Park,60,FALSE,Group
 One Hour Of Reading,60,FALSE,Enrichment
+Bike Ride,60,FALSE,Outdoor
+Walk Around The Block,90,FALSE,Outdoor
+Meditation, 30,FALSE,Mindfulness
+Read an Inspirational Quote, 30,FALSE,Mindfulness
+Relax with a Face Mask,30,FALSE,Home
+Bubble Bath,30,FALSE,Home
+Watch Your Favorite Movie,60,FALSE,Home
+Listen to a Podcast,30,FALSE,Home
+Sit Outside with a Cup of Coffee,30,FALSE,Outdoor
+Visit Your Favorite Park,60,FALSE,Outdoor
