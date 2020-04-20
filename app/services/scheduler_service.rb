@@ -90,16 +90,12 @@ class SchedulerService
   def create_random_date_and_activity
     open_slot = false
     activity = current_user.activities.sample(1).first
-    if activity.nil?
-      activity = "Yoga"
-    else
-      activity = activity.name
-    end
 
     until open_slot
       day = @weekdays.sample(1).first
       time = hour_scheduled_times.sample(1)[0]
       user_availability = final_availability(availability)
+
       open_slot = time.to_a.all? { |num| user_availability[day].include?(num)}
       return [time.first, day, activity] if open_slot
     end
@@ -113,9 +109,10 @@ class SchedulerService
     day = Date.strptime(details[1], '%A')
     day = day + 1.week if day < Time.zone.now.to_datetime.new_offset('-0600')
     @start_date  = day + (details[0].to_f.hour)
-    @end_date = (@start_date + 1.hour)
-    @activity = details[2]
+    @end_date = (@start_date + details[2].est_time.minutes)
+    @activity = details[2].name
   end
+
 
   # Takes the formated details and inserts them into the google api event.new
   def event
