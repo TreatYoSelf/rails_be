@@ -33,44 +33,42 @@ class SchedulerService
 
   # Sets available times from 8 a.m. - 8 p.m. as a string and puts that
   # in an array by the minute i.e. ["08:00", "08:01", "08:02"]
-  def available_time
-    available_times = ("08:00".."20:00").to_a
-    available_times.delete_if do |time|
-    # since this is a string this deletes any minute over 00:59 ex. (09:60 would be deleted)
-    # this returns an array with more realistic time frames
+  def available_time(times)
+    times.to_a.delete_if do |time|
      time.split("")[3].to_i > 5
     end
   end
 
-  # Uses the array of events to subract event time frames from a user's availability.
+  def format_scheduled_events(event)
+    start_time = event.original_start_time
+    start_time = event.start if event.original_start_time.nil?
+    end_time = event.end.date_time if event.end.date.nil?
+    end_time = event.end.date if event.end.date_time.nil?
+    weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
+    weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
+    start_time = event.start.date if start_time.date_time.nil?
+    start_time = start_time.date_time if event.start.date.nil?
+    [start_time, end_time, weekday]
+  end
+
+
   def availability
     find_user_events.items.reduce({}) do |acc, event|
-      # Sets start and end time frames from a single event
-      start_time = event.original_start_time
-      start_time = event.start if event.original_start_time.nil?
-      end_time = event.end.date_time if event.end.date.nil?
-      end_time = event.end.date if event.end.date_time.nil?
-      weekday = start_time.date.strftime("%A") if start_time.date_time.nil?
-      weekday = start_time.date_time.strftime("%A") if start_time.date.nil?
-      start_time = event.start.date if start_time.date_time.nil?
-      start_time = start_time.date_time if event.start.date.nil?
 
-      # Takes start and end times and converts them to a stringtime and sets an event range.
-      event = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
-      event_range = event.to_a
-      # Similar to available_time this deletes any mintues over :59.
-      event_range.delete_if do |time|
-        time.split("")[3].to_i > 5
-      end
-      # The key of the acc is the day of the week i.e. "Wednesday"
+      start_time = format_scheduled_events(event)[0]
+      end_time = format_scheduled_events(event)[1]
+      weekday = format_scheduled_events(event)[2]
+
+      available_times = ("08:00".."20:00")
+      event_time_range = start_time.strftime("%H:%M")..end_time.strftime("%H:%M")
+      event_range = available_time(event_time_range)
+
       if !acc[weekday]
-      # If this key has not been assigned then sets the availability to full availability
-        available_times = available_time
+        available_times = available_time(available_times)
       else
-      # If this key has been assigned it sets available times to the existing value
         available_times = acc[weekday]
       end
-      # Sets key to weekday and the value to available time minus the event time.
+
       acc[weekday] = [available_times - event_range].flatten
       acc
     end
@@ -79,8 +77,9 @@ class SchedulerService
   # If there was not an event scheduled then that day will not be in the availability hash
   # This checks if it is present and if it's not sets the key to the weekday and availability to full availability
   def final_availability(availability)
+    available_times = ("08:00".."20:00")
     @weekdays.each do |weekday|
-      availability[weekday] = available_time if !availability[weekday]
+      availability[weekday] = available_time(available_times) if !availability[weekday]
     end
     availability
   end
@@ -117,13 +116,9 @@ class SchedulerService
   # Takes the formated details and inserts them into the google api event.new
   def event
     event_details(create_random_date_and_activity)
-    EventSchedule.create!(event_name: @activity,
-                      event_start_time: @start_date.to_f * 1000,
-                      event_end_time: @end_date.to_f * 1000,
-                      user_id: @current_user.id)
 
     @event = Google::Apis::CalendarV3::Event.new(
-      summary: "Treat Yo Self to: #{@activity}",
+      summary: @activity,
       description: 'Treat Yo Self',
 
       start: Google::Apis::CalendarV3::EventDateTime.new(
@@ -140,10 +135,6 @@ class SchedulerService
         use_default: false,
 
         overrides: [
-          Google::Apis::CalendarV3::EventReminder.new(
-            reminder_method: 'email',
-            minutes: 24 * 60
-          ),
 
           Google::Apis::CalendarV3::EventReminder.new(
             reminder_method: 'popup',

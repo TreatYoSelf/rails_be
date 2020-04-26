@@ -5,7 +5,7 @@ class Api::V1::SuggestionsController < ApplicationController
 	end
 
 	def index
-		render json: { events: SuggestionFacade.new(current_user).schedule_activities}
+		render json: { events: SuggestionFacade.new(current_user).create_event_schedule}
 	end
 
 	private
